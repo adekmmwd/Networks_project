@@ -37,7 +37,7 @@ MSG_TERMINATE  = 12
 
 def pack_header(msg_type, snapshot_id=0, seq_num=0, payload_len=0):
 
-    timestamp = time.monotonic()  # Monotonic clock for reliable time deltas
+    timestamp = time.time()  # Monotonic clock for reliable time deltas
     return struct.pack(
         HEADER_FORMAT,
         PROTOCOL_ID,

@@ -44,7 +44,7 @@ class GameServer:
         # Time fields
         self.interval = 0.05  # 20 ticks per second
         self.join_time_gap_allowed = 10
-        self.join_start_time = time.monotonic()
+        self.join_start_time = time.time()
         self.game_start_time = 0
         self.last_broadcast_time = 0
 
@@ -173,7 +173,7 @@ class GameServer:
                 self.current_snapshot["grid"][cell_y][cell_x] = player.id
                 player.score += 1
                 print(f"Player {player.id} acquired cell ({cell_x}, {cell_y})")
-        self.current_snapshot["timestamp"] = time.monotonic()
+        #self.current_snapshot["timestamp"] = time.time()
 
     def handle_snapshot_ack(self, addr, payload):
         ack_info = json.loads(payload.decode())
@@ -184,14 +184,14 @@ class GameServer:
             # Only update if this is a newer (or same) ack
             if snapshot_id >= player.last_snapshot_id:
                 player.last_snapshot_id = snapshot_id
-                player.last_update_time = time.monotonic()
+                player.last_update_time = time.time()
                 # print(f"ACK from Player {player.id} for snapshot {snapshot_id}")
 
     # --- State Logic (Time-based and Transitional) ---
 
     def update_waiting_for_join(self):
         """Check time/ready conditions to start the game."""
-        time_elapsed = time.monotonic() - self.join_start_time
+        time_elapsed = time.time() - self.join_start_time
         
         # Condition 1: Time is up and we have at least 2 players
         time_condition = (time_elapsed >= self.join_time_gap_allowed and len(self.players) > 1)
@@ -209,7 +209,7 @@ class GameServer:
 
         self.current_snapshot = {
             "grid": ([[0 for _ in range(20)] for _ in range(20)]),
-            "timestamp": time.monotonic(),
+            "timestamp": time.time(),
             "snapshot_id": self.snapshot_id
         }
 
@@ -223,8 +223,8 @@ class GameServer:
 
         self.snapshot_id += 1
         self.game_running = True
-        self.game_start_time = time.monotonic()
-        self.last_broadcast_time = time.monotonic()  # <-- Start the broadcast timer
+        self.game_start_time = time.time()
+        self.last_broadcast_time = time.time()  # <-- Start the broadcast timer
         
         # Transition to the next state
         self.state = ServerState.GAME_LOOP
@@ -232,7 +232,7 @@ class GameServer:
 
     def update_game_loop(self):
         """Check broadcast timer and game-over conditions."""
-        current_time = time.monotonic()
+        current_time = time.time()
         
         # --- 1. Broadcast Snapshots on Interval ---
         if (current_time - self.last_broadcast_time) >= self.interval:
@@ -277,7 +277,7 @@ class GameServer:
                 self.last_snapshot_deltas.pop(0)
 
         # Update snapshot timestamp and ID
-        self.current_snapshot["timestamp"] = time.monotonic()
+        #self.current_snapshot["timestamp"] = time.time()
         self.current_snapshot["snapshot_id"] = server_snapshot_id
 
         # Prepare full snapshot packet
@@ -307,11 +307,13 @@ class GameServer:
                 # Too far behind or no baseline → send full
                 self.server_socket.sendto(full_packet, player.address)
                 # print(f"Sent FULL snapshot to Player {player.id} (resync)")
+                
+            print(f"SNAPSHOT_SEND server_ts={time.time()} snapshot_id={server_snapshot_id} seq={self.seq_num}")
         
         # Store the just-sent snapshot as the previous one
         self.previous_snapshot = {
             "grid": [row.copy() for row in self.current_snapshot["grid"]],
-            "timestamp": self.current_snapshot["timestamp"],
+            #"timestamp": self.current_snapshot["timestamp"],
             "snapshot_id": server_snapshot_id
         }
         
@@ -325,7 +327,7 @@ class GameServer:
         end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         print(f"Game ended at: {end_time}")
 
-        duration = round(time.monotonic() - self.game_start_time, 2)
+        duration = round(time.time() - self.game_start_time, 2)
         print(f"Total game duration: {duration} seconds")
 
         leaderboard = sorted(self.players.values(), key=lambda p: p.score, reverse=True)
@@ -369,7 +371,7 @@ class GameServer:
         
         # Reset state back to WAITING_FOR_JOIN
         self.state = ServerState.WAITING_FOR_JOIN
-        self.join_start_time = time.monotonic()
+        self.join_start_time = time.time()
 
 
 # --- Entry Point ---
