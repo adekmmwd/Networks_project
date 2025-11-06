@@ -196,7 +196,7 @@ class GameServer:
         time_condition = (time_elapsed >= self.join_time_gap_allowed and len(self.players) > 1)
         
         # Condition 2: Half the players are ready (and we have at least 1)
-        ready_condition = (len(self.players) > 1 and self.ready_count >= len(self.players) / 2)
+        ready_condition = (len(self.players) > 2 and self.ready_count >= len(self.players) / 2)
 
         if time_condition or ready_condition:
             print("Conditions met, moving to INIT state.")
@@ -265,15 +265,15 @@ class GameServer:
         delta_changes = [(int(y), int(x), int(new_arr[y, x])) for y, x in diff_indices]
 
         # Only store delta if there *were* changes
-        if delta_changes:
-            delta_entry = {
+        
+        delta_entry = {
                 "snapshot_id": server_snapshot_id,
                 "delta": delta_changes,
-            }
-            self.last_snapshot_deltas.append(delta_entry)
+        }
+        self.last_snapshot_deltas.append(delta_entry)
             # Keep only the last ~3 deltas
-            if len(self.last_snapshot_deltas) > 3:
-                self.last_snapshot_deltas.pop(0)
+        if len(self.last_snapshot_deltas) > 3:
+             self.last_snapshot_deltas.pop(0)
 
         # Update snapshot timestamp and ID
         #self.current_snapshot["timestamp"] = time.time()
