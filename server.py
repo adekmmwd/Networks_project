@@ -122,7 +122,7 @@ class GameServer:
                 if msg_type == MSG_ACQUIRE_EVENT:
                     self.handle_acquire_event(addr, payload)
                 elif msg_type == MSG_SNAPSHOT_ACK:
-                    self.handle_snapshot_ack(addr, payload)
+                    self.handle_snapshot_ack(addr, header)
             
             # Other states (INIT, GAME_OVER) don't process packets
 
@@ -175,9 +175,8 @@ class GameServer:
                 print(f"Player {player.id} acquired cell ({cell_x}, {cell_y})")
         #self.current_snapshot["timestamp"] = time.time()
 
-    def handle_snapshot_ack(self, addr, payload):
-        ack_info = json.loads(payload.decode())
-        snapshot_id = ack_info.get("snapshot_id", 0)
+    def handle_snapshot_ack(self, addr, header,payload):
+        snapshot_id = header["snapshot_id"]
 
         player = self.players.get(addr)
         if player:
@@ -269,7 +268,7 @@ class GameServer:
         if delta_changes:
             delta_entry = {
                 "snapshot_id": server_snapshot_id,
-                "delta": delta_changes,
+                "changes": delta_changes,
             }
             self.last_snapshot_deltas.append(delta_entry)
             # Keep only the last ~3 deltas
@@ -307,7 +306,7 @@ class GameServer:
                 # Too far behind or no baseline → send full
                 self.server_socket.sendto(full_packet, player.address)
                 # print(f"Sent FULL snapshot to Player {player.id} (resync)")
-                
+
             print(f"SNAPSHOT_SEND server_ts={time.time()} snapshot_id={server_snapshot_id} seq={self.seq_num}")
         
         # Store the just-sent snapshot as the previous one
