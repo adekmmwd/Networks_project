@@ -1,0 +1,921 @@
+Client started.
+Initial state: WAIT_FOR_JOIN
+client: starting...
+client: state: WAIT_FOR_JOIN
+Sent JOIN_REQ
+✓ JOIN_ACK received. Server assigned me ID: 3
+ Transition: WAIT_FOR_JOIN → WAIT_FOR_READY
+→ Sent READY_REQ
+✓ READY_ACK received. Waiting for start snapshot.
+ Transition: WAIT_FOR_READY → WAIT_FOR_STARTGAME
+✓ Received full snapshot #0
+[FULL] Applied full snapshot #0
+ Transition: WAIT_FOR_STARTGAME → IN_GAME_LOOP
+[DELTA] Applied 0 changes (snapshot #1)
+✓ Applied delta snapshot #1
+SNAPSHOT recv_time=1762437875.0772967 server_ts=1762437875.0771196 snapshot_id=1 seq=12
+[DELTA] Applied 0 changes (snapshot #2)
+✓ Applied delta snapshot #2
+SNAPSHOT recv_time=1762437875.1282823 server_ts=1762437875.1279113 snapshot_id=2 seq=13
+[DELTA] Applied 0 changes (snapshot #3)
+✓ Applied delta snapshot #3
+SNAPSHOT recv_time=1762437875.1792583 server_ts=1762437875.1787052 snapshot_id=3 seq=14
+[DELTA] Applied 0 changes (snapshot #4)
+✓ Applied delta snapshot #4
+SNAPSHOT recv_time=1762437875.2302268 server_ts=1762437875.229507 snapshot_id=4 seq=15
+[DELTA] Applied 0 changes (snapshot #5)
+✓ Applied delta snapshot #5
+SNAPSHOT recv_time=1762437875.2812068 server_ts=1762437875.280274 snapshot_id=5 seq=16
+[DELTA] Applied 0 changes (snapshot #6)
+✓ Applied delta snapshot #6
+SNAPSHOT recv_time=1762437875.3321621 server_ts=1762437875.331142 snapshot_id=6 seq=17
+[DELTA] Applied 0 changes (snapshot #7)
+✓ Applied delta snapshot #7
+SNAPSHOT recv_time=1762437875.3821902 server_ts=1762437875.3821352 snapshot_id=7 seq=18
+[DELTA] Applied 0 changes (snapshot #8)
+✓ Applied delta snapshot #8
+SNAPSHOT recv_time=1762437875.4333045 server_ts=1762437875.4328978 snapshot_id=8 seq=19
+[DELTA] Applied 0 changes (snapshot #9)
+✓ Applied delta snapshot #9
+SNAPSHOT recv_time=1762437875.4843316 server_ts=1762437875.4835978 snapshot_id=9 seq=20
+[DELTA] Applied 0 changes (snapshot #10)
+✓ Applied delta snapshot #10
+SNAPSHOT recv_time=1762437875.535319 server_ts=1762437875.5344684 snapshot_id=10 seq=21
+[DELTA] Applied 0 changes (snapshot #11)
+✓ Applied delta snapshot #11
+SNAPSHOT recv_time=1762437875.5863001 server_ts=1762437875.5853627 snapshot_id=11 seq=22
+[DELTA] Applied 0 changes (snapshot #12)
+✓ Applied delta snapshot #12
+SNAPSHOT recv_time=1762437875.636253 server_ts=1762437875.6361043 snapshot_id=12 seq=23
+[DELTA] Applied 0 changes (snapshot #13)
+✓ Applied delta snapshot #13
+SNAPSHOT recv_time=1762437875.687288 server_ts=1762437875.686805 snapshot_id=13 seq=24
+[DELTA] Applied 0 changes (snapshot #14)
+✓ Applied delta snapshot #14
+SNAPSHOT recv_time=1762437875.7382634 server_ts=1762437875.7375407 snapshot_id=14 seq=25
+[DELTA] Applied 0 changes (snapshot #15)
+✓ Applied delta snapshot #15
+SNAPSHOT recv_time=1762437875.7892966 server_ts=1762437875.7885144 snapshot_id=15 seq=26
+[DELTA] Applied 0 changes (snapshot #16)
+✓ Applied delta snapshot #16
+SNAPSHOT recv_time=1762437875.8414798 server_ts=1762437875.8407166 snapshot_id=16 seq=27
+[DELTA] Applied 0 changes (snapshot #17)
+✓ Applied delta snapshot #17
+SNAPSHOT recv_time=1762437875.8924809 server_ts=1762437875.8916843 snapshot_id=17 seq=28
+[DELTA] Applied 0 changes (snapshot #18)
+✓ Applied delta snapshot #18
+SNAPSHOT recv_time=1762437875.9435067 server_ts=1762437875.9424734 snapshot_id=18 seq=29
+[DELTA] Applied 0 changes (snapshot #19)
+✓ Applied delta snapshot #19
+SNAPSHOT recv_time=1762437875.9935691 server_ts=1762437875.9933527 snapshot_id=19 seq=30
+[DELTA] Applied 0 changes (snapshot #20)
+✓ Applied delta snapshot #20
+SNAPSHOT recv_time=1762437876.0446131 server_ts=1762437876.0441139 snapshot_id=20 seq=31
+[DELTA] Applied 0 changes (snapshot #21)
+✓ Applied delta snapshot #21
+SNAPSHOT recv_time=1762437876.0955667 server_ts=1762437876.094506 snapshot_id=21 seq=32
+[DELTA] Applied 0 changes (snapshot #22)
+✓ Applied delta snapshot #22
+SNAPSHOT recv_time=1762437876.1454973 server_ts=1762437876.1452303 snapshot_id=22 seq=33
+[DELTA] Applied 0 changes (snapshot #23)
+✓ Applied delta snapshot #23
+SNAPSHOT recv_time=1762437876.1965857 server_ts=1762437876.196318 snapshot_id=23 seq=34
+[DELTA] Applied 0 changes (snapshot #24)
+✓ Applied delta snapshot #24
+SNAPSHOT recv_time=1762437876.2476444 server_ts=1762437876.2471035 snapshot_id=24 seq=35
+[DELTA] Applied 0 changes (snapshot #25)
+✓ Applied delta snapshot #25
+SNAPSHOT recv_time=1762437876.2987545 server_ts=1762437876.2979057 snapshot_id=25 seq=36
+[DELTA] Applied 0 changes (snapshot #26)
+✓ Applied delta snapshot #26
+SNAPSHOT recv_time=1762437876.3509245 server_ts=1762437876.3497958 snapshot_id=26 seq=37
+[DELTA] Applied 0 changes (snapshot #27)
+✓ Applied delta snapshot #27
+SNAPSHOT recv_time=1762437876.4019878 server_ts=1762437876.4017332 snapshot_id=27 seq=38
+[DELTA] Applied 0 changes (snapshot #28)
+✓ Applied delta snapshot #28
+SNAPSHOT recv_time=1762437876.4530046 server_ts=1762437876.4525979 snapshot_id=28 seq=39
+[DELTA] Applied 0 changes (snapshot #29)
+✓ Applied delta snapshot #29
+SNAPSHOT recv_time=1762437876.5040505 server_ts=1762437876.5034783 snapshot_id=29 seq=40
+[DELTA] Applied 0 changes (snapshot #30)
+✓ Applied delta snapshot #30
+SNAPSHOT recv_time=1762437876.555055 server_ts=1762437876.5543044 snapshot_id=30 seq=41
+[DELTA] Applied 0 changes (snapshot #31)
+✓ Applied delta snapshot #31
+SNAPSHOT recv_time=1762437876.6071498 server_ts=1762437876.6062763 snapshot_id=31 seq=42
+[DELTA] Applied 0 changes (snapshot #32)
+✓ Applied delta snapshot #32
+SNAPSHOT recv_time=1762437876.6581984 server_ts=1762437876.6572156 snapshot_id=32 seq=43
+[DELTA] Applied 0 changes (snapshot #33)
+✓ Applied delta snapshot #33
+SNAPSHOT recv_time=1762437876.7082152 server_ts=1762437876.7080274 snapshot_id=33 seq=44
+[DELTA] Applied 0 changes (snapshot #34)
+✓ Applied delta snapshot #34
+SNAPSHOT recv_time=1762437876.7592747 server_ts=1762437876.7588995 snapshot_id=34 seq=45
+[DELTA] Applied 0 changes (snapshot #35)
+✓ Applied delta snapshot #35
+SNAPSHOT recv_time=1762437876.8104706 server_ts=1762437876.8100004 snapshot_id=35 seq=46
+[DELTA] Applied 0 changes (snapshot #36)
+✓ Applied delta snapshot #36
+SNAPSHOT recv_time=1762437876.8604212 server_ts=1762437876.860321 snapshot_id=36 seq=47
+[DELTA] Applied 0 changes (snapshot #37)
+✓ Applied delta snapshot #37
+SNAPSHOT recv_time=1762437876.911524 server_ts=1762437876.9114726 snapshot_id=37 seq=48
+[DELTA] Applied 0 changes (snapshot #38)
+✓ Applied delta snapshot #38
+SNAPSHOT recv_time=1762437876.9628487 server_ts=1762437876.9623973 snapshot_id=38 seq=49
+[DELTA] Applied 0 changes (snapshot #39)
+✓ Applied delta snapshot #39
+SNAPSHOT recv_time=1762437877.0140562 server_ts=1762437877.0135984 snapshot_id=39 seq=50
+[DELTA] Applied 0 changes (snapshot #40)
+✓ Applied delta snapshot #40
+SNAPSHOT recv_time=1762437877.0652175 server_ts=1762437877.0644104 snapshot_id=40 seq=51
+[DELTA] Applied 0 changes (snapshot #41)
+✓ Applied delta snapshot #41
+SNAPSHOT recv_time=1762437877.115359 server_ts=1762437877.1149843 snapshot_id=41 seq=52
+[DELTA] Applied 0 changes (snapshot #42)
+✓ Applied delta snapshot #42
+SNAPSHOT recv_time=1762437877.1665728 server_ts=1762437877.1659734 snapshot_id=42 seq=53
+[DELTA] Applied 0 changes (snapshot #43)
+✓ Applied delta snapshot #43
+SNAPSHOT recv_time=1762437877.2178094 server_ts=1762437877.2167637 snapshot_id=43 seq=54
+[DELTA] Applied 0 changes (snapshot #44)
+✓ Applied delta snapshot #44
+SNAPSHOT recv_time=1762437877.268897 server_ts=1762437877.2679927 snapshot_id=44 seq=55
+[DELTA] Applied 0 changes (snapshot #45)
+✓ Applied delta snapshot #45
+SNAPSHOT recv_time=1762437877.3198743 server_ts=1762437877.3191388 snapshot_id=45 seq=56
+[DELTA] Applied 0 changes (snapshot #46)
+✓ Applied delta snapshot #46
+SNAPSHOT recv_time=1762437877.369821 server_ts=1762437877.3696983 snapshot_id=46 seq=57
+[DELTA] Applied 0 changes (snapshot #47)
+✓ Applied delta snapshot #47
+SNAPSHOT recv_time=1762437877.4209335 server_ts=1762437877.4206824 snapshot_id=47 seq=58
+[DELTA] Applied 0 changes (snapshot #48)
+✓ Applied delta snapshot #48
+SNAPSHOT recv_time=1762437877.4720042 server_ts=1762437877.4716263 snapshot_id=48 seq=59
+[DELTA] Applied 0 changes (snapshot #49)
+✓ Applied delta snapshot #49
+SNAPSHOT recv_time=1762437877.5231483 server_ts=1762437877.522735 snapshot_id=49 seq=60
+[DELTA] Applied 0 changes (snapshot #50)
+✓ Applied delta snapshot #50
+SNAPSHOT recv_time=1762437877.5743794 server_ts=1762437877.5739398 snapshot_id=50 seq=61
+[DELTA] Applied 0 changes (snapshot #51)
+✓ Applied delta snapshot #51
+SNAPSHOT recv_time=1762437877.6244955 server_ts=1762437877.6241705 snapshot_id=51 seq=62
+[DELTA] Applied 0 changes (snapshot #52)
+✓ Applied delta snapshot #52
+SNAPSHOT recv_time=1762437877.6756992 server_ts=1762437877.6752071 snapshot_id=52 seq=63
+[DELTA] Applied 0 changes (snapshot #53)
+✓ Applied delta snapshot #53
+SNAPSHOT recv_time=1762437877.726978 server_ts=1762437877.7265155 snapshot_id=53 seq=64
+[DELTA] Applied 0 changes (snapshot #54)
+✓ Applied delta snapshot #54
+SNAPSHOT recv_time=1762437877.7783146 server_ts=1762437877.7777305 snapshot_id=54 seq=65
+[DELTA] Applied 0 changes (snapshot #55)
+✓ Applied delta snapshot #55
+SNAPSHOT recv_time=1762437877.828471 server_ts=1762437877.82776 snapshot_id=55 seq=66
+[DELTA] Applied 0 changes (snapshot #56)
+✓ Applied delta snapshot #56
+SNAPSHOT recv_time=1762437877.8795922 server_ts=1762437877.8787959 snapshot_id=56 seq=67
+[DELTA] Applied 0 changes (snapshot #57)
+✓ Applied delta snapshot #57
+SNAPSHOT recv_time=1762437877.9306285 server_ts=1762437877.929801 snapshot_id=57 seq=68
+[DELTA] Applied 0 changes (snapshot #58)
+✓ Applied delta snapshot #58
+SNAPSHOT recv_time=1762437877.981756 server_ts=1762437877.980954 snapshot_id=58 seq=69
+[DELTA] Applied 0 changes (snapshot #59)
+✓ Applied delta snapshot #59
+SNAPSHOT recv_time=1762437878.0328453 server_ts=1762437878.0322175 snapshot_id=59 seq=70
+[DELTA] Applied 0 changes (snapshot #60)
+✓ Applied delta snapshot #60
+SNAPSHOT recv_time=1762437878.0850673 server_ts=1762437878.0843139 snapshot_id=60 seq=71
+[DELTA] Applied 0 changes (snapshot #61)
+✓ Applied delta snapshot #61
+SNAPSHOT recv_time=1762437878.1362722 server_ts=1762437878.135492 snapshot_id=61 seq=72
+[DELTA] Applied 0 changes (snapshot #62)
+✓ Applied delta snapshot #62
+SNAPSHOT recv_time=1762437878.1874459 server_ts=1762437878.1868641 snapshot_id=62 seq=73
+[DELTA] Applied 0 changes (snapshot #63)
+✓ Applied delta snapshot #63
+SNAPSHOT recv_time=1762437878.2385817 server_ts=1762437878.2378318 snapshot_id=63 seq=74
+[DELTA] Applied 0 changes (snapshot #64)
+✓ Applied delta snapshot #64
+SNAPSHOT recv_time=1762437878.2896729 server_ts=1762437878.2887793 snapshot_id=64 seq=75
+[DELTA] Applied 0 changes (snapshot #65)
+✓ Applied delta snapshot #65
+SNAPSHOT recv_time=1762437878.3418865 server_ts=1762437878.340921 snapshot_id=65 seq=76
+[DELTA] Applied 0 changes (snapshot #66)
+✓ Applied delta snapshot #66
+SNAPSHOT recv_time=1762437878.3930132 server_ts=1762437878.391971 snapshot_id=66 seq=77
+[DELTA] Applied 0 changes (snapshot #67)
+✓ Applied delta snapshot #67
+SNAPSHOT recv_time=1762437878.4429379 server_ts=1762437878.4427989 snapshot_id=67 seq=78
+[DELTA] Applied 0 changes (snapshot #68)
+✓ Applied delta snapshot #68
+SNAPSHOT recv_time=1762437878.493998 server_ts=1762437878.4937139 snapshot_id=68 seq=79
+[DELTA] Applied 0 changes (snapshot #69)
+✓ Applied delta snapshot #69
+SNAPSHOT recv_time=1762437878.545115 server_ts=1762437878.5447206 snapshot_id=69 seq=80
+[DELTA] Applied 0 changes (snapshot #70)
+✓ Applied delta snapshot #70
+SNAPSHOT recv_time=1762437878.597506 server_ts=1762437878.5968466 snapshot_id=70 seq=81
+[DELTA] Applied 0 changes (snapshot #71)
+✓ Applied delta snapshot #71
+SNAPSHOT recv_time=1762437878.648569 server_ts=1762437878.6481023 snapshot_id=71 seq=82
+[DELTA] Applied 0 changes (snapshot #72)
+✓ Applied delta snapshot #72
+SNAPSHOT recv_time=1762437878.6997519 server_ts=1762437878.6993048 snapshot_id=72 seq=83
+[DELTA] Applied 0 changes (snapshot #73)
+✓ Applied delta snapshot #73
+SNAPSHOT recv_time=1762437878.7509706 server_ts=1762437878.750314 snapshot_id=73 seq=84
+[DELTA] Applied 0 changes (snapshot #74)
+✓ Applied delta snapshot #74
+SNAPSHOT recv_time=1762437878.8020809 server_ts=1762437878.8013196 snapshot_id=74 seq=85
+[DELTA] Applied 0 changes (snapshot #75)
+✓ Applied delta snapshot #75
+SNAPSHOT recv_time=1762437878.8542001 server_ts=1762437878.853416 snapshot_id=75 seq=86
+[DELTA] Applied 0 changes (snapshot #76)
+✓ Applied delta snapshot #76
+SNAPSHOT recv_time=1762437878.9051876 server_ts=1762437878.9042795 snapshot_id=76 seq=87
+[DELTA] Applied 0 changes (snapshot #77)
+✓ Applied delta snapshot #77
+SNAPSHOT recv_time=1762437878.955171 server_ts=1762437878.9550688 snapshot_id=77 seq=88
+[DELTA] Applied 0 changes (snapshot #78)
+✓ Applied delta snapshot #78
+SNAPSHOT recv_time=1762437879.0061827 server_ts=1762437879.0060034 snapshot_id=78 seq=89
+[DELTA] Applied 0 changes (snapshot #79)
+✓ Applied delta snapshot #79
+SNAPSHOT recv_time=1762437879.0571811 server_ts=1762437879.0568814 snapshot_id=79 seq=90
+[DELTA] Applied 0 changes (snapshot #80)
+✓ Applied delta snapshot #80
+SNAPSHOT recv_time=1762437879.1082134 server_ts=1762437879.1073377 snapshot_id=80 seq=91
+[DELTA] Applied 0 changes (snapshot #81)
+✓ Applied delta snapshot #81
+SNAPSHOT recv_time=1762437879.1592848 server_ts=1762437879.1583838 snapshot_id=81 seq=92
+[DELTA] Applied 0 changes (snapshot #82)
+✓ Applied delta snapshot #82
+SNAPSHOT recv_time=1762437879.209227 server_ts=1762437879.2091486 snapshot_id=82 seq=93
+[DELTA] Applied 0 changes (snapshot #83)
+✓ Applied delta snapshot #83
+SNAPSHOT recv_time=1762437879.2601984 server_ts=1762437879.2598636 snapshot_id=83 seq=94
+[DELTA] Applied 0 changes (snapshot #84)
+✓ Applied delta snapshot #84
+SNAPSHOT recv_time=1762437879.3111796 server_ts=1762437879.3106685 snapshot_id=84 seq=95
+[DELTA] Applied 0 changes (snapshot #85)
+✓ Applied delta snapshot #85
+SNAPSHOT recv_time=1762437879.3632166 server_ts=1762437879.3628075 snapshot_id=85 seq=96
+[DELTA] Applied 0 changes (snapshot #86)
+✓ Applied delta snapshot #86
+SNAPSHOT recv_time=1762437879.4141834 server_ts=1762437879.4137743 snapshot_id=86 seq=97
+[DELTA] Applied 0 changes (snapshot #87)
+✓ Applied delta snapshot #87
+SNAPSHOT recv_time=1762437879.4651277 server_ts=1762437879.4647534 snapshot_id=87 seq=98
+[DELTA] Applied 0 changes (snapshot #88)
+✓ Applied delta snapshot #88
+SNAPSHOT recv_time=1762437879.5160744 server_ts=1762437879.5157778 snapshot_id=88 seq=99
+[DELTA] Applied 0 changes (snapshot #89)
+✓ Applied delta snapshot #89
+SNAPSHOT recv_time=1762437879.5670004 server_ts=1762437879.5667768 snapshot_id=89 seq=100
+[DELTA] Applied 0 changes (snapshot #90)
+✓ Applied delta snapshot #90
+SNAPSHOT recv_time=1762437879.6191328 server_ts=1762437879.618894 snapshot_id=90 seq=101
+[DELTA] Applied 0 changes (snapshot #91)
+✓ Applied delta snapshot #91
+SNAPSHOT recv_time=1762437879.6701832 server_ts=1762437879.669676 snapshot_id=91 seq=102
+[DELTA] Applied 0 changes (snapshot #92)
+✓ Applied delta snapshot #92
+SNAPSHOT recv_time=1762437879.7212887 server_ts=1762437879.7209163 snapshot_id=92 seq=103
+[DELTA] Applied 0 changes (snapshot #93)
+✓ Applied delta snapshot #93
+SNAPSHOT recv_time=1762437879.7723145 server_ts=1762437879.7719152 snapshot_id=93 seq=104
+[DELTA] Applied 0 changes (snapshot #94)
+✓ Applied delta snapshot #94
+SNAPSHOT recv_time=1762437879.823373 server_ts=1762437879.8228874 snapshot_id=94 seq=105
+[DELTA] Applied 0 changes (snapshot #95)
+✓ Applied delta snapshot #95
+SNAPSHOT recv_time=1762437879.8754714 server_ts=1762437879.8748648 snapshot_id=95 seq=106
+[DELTA] Applied 0 changes (snapshot #96)
+✓ Applied delta snapshot #96
+SNAPSHOT recv_time=1762437879.926634 server_ts=1762437879.9257612 snapshot_id=96 seq=107
+[DELTA] Applied 0 changes (snapshot #97)
+✓ Applied delta snapshot #97
+SNAPSHOT recv_time=1762437879.977755 server_ts=1762437879.9768136 snapshot_id=97 seq=108
+📦 Sent ACQUIRE event (12,4)
+[DELTA] Applied 3 changes (snapshot #98)
+✓ Applied delta snapshot #98
+SNAPSHOT recv_time=1762437880.0288074 server_ts=1762437880.0278103 snapshot_id=98 seq=109
+📦 Sent ACQUIRE event (15,7)
+[DELTA] Applied 3 changes (snapshot #99)
+✓ Applied delta snapshot #99
+SNAPSHOT recv_time=1762437880.078943 server_ts=1762437880.078871 snapshot_id=99 seq=110
+📦 Sent ACQUIRE event (4,9)
+[DELTA] Applied 3 changes (snapshot #100)
+✓ Applied delta snapshot #100
+SNAPSHOT recv_time=1762437880.1301973 server_ts=1762437880.1297457 snapshot_id=100 seq=111
+📦 Sent ACQUIRE event (12,2)
+[DELTA] Applied 3 changes (snapshot #101)
+✓ Applied delta snapshot #101
+SNAPSHOT recv_time=1762437880.1814165 server_ts=1762437880.1807551 snapshot_id=101 seq=112
+📦 Sent ACQUIRE event (0,18)
+[DELTA] Applied 2 changes (snapshot #102)
+✓ Applied delta snapshot #102
+SNAPSHOT recv_time=1762437880.232544 server_ts=1762437880.2316365 snapshot_id=102 seq=113
+📦 Sent ACQUIRE event (0,8)
+[DELTA] Applied 3 changes (snapshot #103)
+✓ Applied delta snapshot #103
+SNAPSHOT recv_time=1762437880.2825603 server_ts=1762437880.282449 snapshot_id=103 seq=114
+📦 Sent ACQUIRE event (6,13)
+[DELTA] Applied 3 changes (snapshot #104)
+✓ Applied delta snapshot #104
+SNAPSHOT recv_time=1762437880.333579 server_ts=1762437880.3329349 snapshot_id=104 seq=115
+📦 Sent ACQUIRE event (1,11)
+[DELTA] Applied 2 changes (snapshot #105)
+✓ Applied delta snapshot #105
+SNAPSHOT recv_time=1762437880.3847072 server_ts=1762437880.3837962 snapshot_id=105 seq=116
+📦 Sent ACQUIRE event (7,18)
+[DELTA] Applied 2 changes (snapshot #106)
+✓ Applied delta snapshot #106
+SNAPSHOT recv_time=1762437880.434827 server_ts=1762437880.4347749 snapshot_id=106 seq=117
+📦 Sent ACQUIRE event (11,10)
+[DELTA] Applied 3 changes (snapshot #107)
+✓ Applied delta snapshot #107
+SNAPSHOT recv_time=1762437880.4863148 server_ts=1762437880.486144 snapshot_id=107 seq=118
+📦 Sent ACQUIRE event (14,9)
+[DELTA] Applied 3 changes (snapshot #108)
+✓ Applied delta snapshot #108
+SNAPSHOT recv_time=1762437880.5378807 server_ts=1762437880.5375812 snapshot_id=108 seq=119
+📦 Sent ACQUIRE event (8,15)
+[DELTA] Applied 2 changes (snapshot #109)
+✓ Applied delta snapshot #109
+SNAPSHOT recv_time=1762437880.5893908 server_ts=1762437880.5883536 snapshot_id=109 seq=120
+📦 Sent ACQUIRE event (5,11)
+[DELTA] Applied 3 changes (snapshot #110)
+✓ Applied delta snapshot #110
+SNAPSHOT recv_time=1762437880.6405337 server_ts=1762437880.6395953 snapshot_id=110 seq=121
+📦 Sent ACQUIRE event (18,15)
+[DELTA] Applied 3 changes (snapshot #111)
+✓ Applied delta snapshot #111
+SNAPSHOT recv_time=1762437880.6917305 server_ts=1762437880.6908228 snapshot_id=111 seq=122
+📦 Sent ACQUIRE event (15,0)
+[DELTA] Applied 3 changes (snapshot #112)
+✓ Applied delta snapshot #112
+SNAPSHOT recv_time=1762437880.7427373 server_ts=1762437880.741913 snapshot_id=112 seq=123
+📦 Sent ACQUIRE event (12,15)
+[DELTA] Applied 3 changes (snapshot #113)
+✓ Applied delta snapshot #113
+SNAPSHOT recv_time=1762437880.793982 server_ts=1762437880.7931914 snapshot_id=113 seq=124
+📦 Sent ACQUIRE event (19,5)
+[DELTA] Applied 3 changes (snapshot #114)
+✓ Applied delta snapshot #114
+SNAPSHOT recv_time=1762437880.8440683 server_ts=1762437880.843211 snapshot_id=114 seq=125
+📦 Sent ACQUIRE event (3,6)
+[DELTA] Applied 3 changes (snapshot #115)
+✓ Applied delta snapshot #115
+SNAPSHOT recv_time=1762437880.8953001 server_ts=1762437880.8943574 snapshot_id=115 seq=126
+📦 Sent ACQUIRE event (17,19)
+[DELTA] Applied 3 changes (snapshot #116)
+✓ Applied delta snapshot #116
+SNAPSHOT recv_time=1762437880.946466 server_ts=1762437880.945361 snapshot_id=116 seq=127
+📦 Sent ACQUIRE event (16,15)
+[DELTA] Applied 2 changes (snapshot #117)
+✓ Applied delta snapshot #117
+SNAPSHOT recv_time=1762437880.9978075 server_ts=1762437880.9967587 snapshot_id=117 seq=128
+📦 Sent ACQUIRE event (6,6)
+[DELTA] Applied 2 changes (snapshot #118)
+✓ Applied delta snapshot #118
+SNAPSHOT recv_time=1762437881.0479589 server_ts=1762437881.04763 snapshot_id=118 seq=129
+[DELTA] Applied 0 changes (snapshot #119)
+✓ Applied delta snapshot #119
+SNAPSHOT recv_time=1762437881.0981386 server_ts=1762437881.0980294 snapshot_id=119 seq=130
+[DELTA] Applied 0 changes (snapshot #120)
+✓ Applied delta snapshot #120
+SNAPSHOT recv_time=1762437881.1492705 server_ts=1762437881.1491704 snapshot_id=120 seq=131
+[DELTA] Applied 0 changes (snapshot #121)
+✓ Applied delta snapshot #121
+SNAPSHOT recv_time=1762437881.200429 server_ts=1762437881.200345 snapshot_id=121 seq=132
+[DELTA] Applied 0 changes (snapshot #122)
+✓ Applied delta snapshot #122
+SNAPSHOT recv_time=1762437881.2514994 server_ts=1762437881.2511303 snapshot_id=122 seq=133
+[DELTA] Applied 0 changes (snapshot #123)
+✓ Applied delta snapshot #123
+SNAPSHOT recv_time=1762437881.3025024 server_ts=1762437881.3018992 snapshot_id=123 seq=134
+[DELTA] Applied 0 changes (snapshot #124)
+✓ Applied delta snapshot #124
+SNAPSHOT recv_time=1762437881.354501 server_ts=1762437881.353778 snapshot_id=124 seq=135
+[DELTA] Applied 0 changes (snapshot #125)
+✓ Applied delta snapshot #125
+SNAPSHOT recv_time=1762437881.4054244 server_ts=1762437881.404516 snapshot_id=125 seq=136
+[DELTA] Applied 0 changes (snapshot #126)
+✓ Applied delta snapshot #126
+SNAPSHOT recv_time=1762437881.456372 server_ts=1762437881.4552996 snapshot_id=126 seq=137
+[DELTA] Applied 0 changes (snapshot #127)
+✓ Applied delta snapshot #127
+SNAPSHOT recv_time=1762437881.5063636 server_ts=1762437881.5062118 snapshot_id=127 seq=138
+[DELTA] Applied 0 changes (snapshot #128)
+✓ Applied delta snapshot #128
+SNAPSHOT recv_time=1762437881.5574152 server_ts=1762437881.5570738 snapshot_id=128 seq=139
+[DELTA] Applied 0 changes (snapshot #129)
+✓ Applied delta snapshot #129
+SNAPSHOT recv_time=1762437881.607632 server_ts=1762437881.6075654 snapshot_id=129 seq=140
+[DELTA] Applied 0 changes (snapshot #130)
+✓ Applied delta snapshot #130
+SNAPSHOT recv_time=1762437881.6588857 server_ts=1762437881.6584954 snapshot_id=130 seq=141
+[DELTA] Applied 0 changes (snapshot #131)
+✓ Applied delta snapshot #131
+SNAPSHOT recv_time=1762437881.7100499 server_ts=1762437881.7092755 snapshot_id=131 seq=142
+[DELTA] Applied 0 changes (snapshot #132)
+✓ Applied delta snapshot #132
+SNAPSHOT recv_time=1762437881.7611241 server_ts=1762437881.7601078 snapshot_id=132 seq=143
+[DELTA] Applied 0 changes (snapshot #133)
+✓ Applied delta snapshot #133
+SNAPSHOT recv_time=1762437881.8123329 server_ts=1762437881.8114748 snapshot_id=133 seq=144
+[DELTA] Applied 0 changes (snapshot #134)
+✓ Applied delta snapshot #134
+SNAPSHOT recv_time=1762437881.8634374 server_ts=1762437881.862548 snapshot_id=134 seq=145
+[DELTA] Applied 0 changes (snapshot #135)
+✓ Applied delta snapshot #135
+SNAPSHOT recv_time=1762437881.9144115 server_ts=1762437881.913467 snapshot_id=135 seq=146
+[DELTA] Applied 0 changes (snapshot #136)
+✓ Applied delta snapshot #136
+SNAPSHOT recv_time=1762437881.9653816 server_ts=1762437881.9643009 snapshot_id=136 seq=147
+[DELTA] Applied 0 changes (snapshot #137)
+✓ Applied delta snapshot #137
+SNAPSHOT recv_time=1762437882.015347 server_ts=1762437882.015042 snapshot_id=137 seq=148
+[DELTA] Applied 0 changes (snapshot #138)
+✓ Applied delta snapshot #138
+SNAPSHOT recv_time=1762437882.0663815 server_ts=1762437882.0658526 snapshot_id=138 seq=149
+[DELTA] Applied 0 changes (snapshot #139)
+✓ Applied delta snapshot #139
+SNAPSHOT recv_time=1762437882.1184938 server_ts=1762437882.11775 snapshot_id=139 seq=150
+[DELTA] Applied 0 changes (snapshot #140)
+✓ Applied delta snapshot #140
+SNAPSHOT recv_time=1762437882.1694818 server_ts=1762437882.168913 snapshot_id=140 seq=151
+[DELTA] Applied 0 changes (snapshot #141)
+✓ Applied delta snapshot #141
+SNAPSHOT recv_time=1762437882.220566 server_ts=1762437882.2198164 snapshot_id=141 seq=152
+[DELTA] Applied 0 changes (snapshot #142)
+✓ Applied delta snapshot #142
+SNAPSHOT recv_time=1762437882.2717133 server_ts=1762437882.2707453 snapshot_id=142 seq=153
+[DELTA] Applied 0 changes (snapshot #143)
+✓ Applied delta snapshot #143
+SNAPSHOT recv_time=1762437882.3218071 server_ts=1762437882.3215988 snapshot_id=143 seq=154
+[DELTA] Applied 0 changes (snapshot #144)
+✓ Applied delta snapshot #144
+SNAPSHOT recv_time=1762437882.3728683 server_ts=1762437882.3718166 snapshot_id=144 seq=155
+[DELTA] Applied 0 changes (snapshot #145)
+✓ Applied delta snapshot #145
+SNAPSHOT recv_time=1762437882.4228907 server_ts=1762437882.4226038 snapshot_id=145 seq=156
+[DELTA] Applied 0 changes (snapshot #146)
+✓ Applied delta snapshot #146
+SNAPSHOT recv_time=1762437882.4739485 server_ts=1762437882.473303 snapshot_id=146 seq=157
+[DELTA] Applied 0 changes (snapshot #147)
+✓ Applied delta snapshot #147
+SNAPSHOT recv_time=1762437882.5250344 server_ts=1762437882.524131 snapshot_id=147 seq=158
+[DELTA] Applied 0 changes (snapshot #148)
+✓ Applied delta snapshot #148
+SNAPSHOT recv_time=1762437882.5750313 server_ts=1762437882.5749543 snapshot_id=148 seq=159
+[DELTA] Applied 0 changes (snapshot #149)
+✓ Applied delta snapshot #149
+SNAPSHOT recv_time=1762437882.627152 server_ts=1762437882.6268814 snapshot_id=149 seq=160
+[DELTA] Applied 0 changes (snapshot #150)
+✓ Applied delta snapshot #150
+SNAPSHOT recv_time=1762437882.6781425 server_ts=1762437882.6778207 snapshot_id=150 seq=161
+[DELTA] Applied 0 changes (snapshot #151)
+✓ Applied delta snapshot #151
+SNAPSHOT recv_time=1762437882.7291746 server_ts=1762437882.7285793 snapshot_id=151 seq=162
+[DELTA] Applied 0 changes (snapshot #152)
+✓ Applied delta snapshot #152
+SNAPSHOT recv_time=1762437882.7802985 server_ts=1762437882.77947 snapshot_id=152 seq=163
+[DELTA] Applied 0 changes (snapshot #153)
+✓ Applied delta snapshot #153
+SNAPSHOT recv_time=1762437882.8313246 server_ts=1762437882.8302536 snapshot_id=153 seq=164
+[DELTA] Applied 0 changes (snapshot #154)
+✓ Applied delta snapshot #154
+SNAPSHOT recv_time=1762437882.8812697 server_ts=1762437882.8804502 snapshot_id=154 seq=165
+[DELTA] Applied 0 changes (snapshot #155)
+✓ Applied delta snapshot #155
+SNAPSHOT recv_time=1762437882.932239 server_ts=1762437882.931292 snapshot_id=155 seq=166
+[DELTA] Applied 0 changes (snapshot #156)
+✓ Applied delta snapshot #156
+SNAPSHOT recv_time=1762437882.9833462 server_ts=1762437882.9822803 snapshot_id=156 seq=167
+[DELTA] Applied 0 changes (snapshot #157)
+✓ Applied delta snapshot #157
+SNAPSHOT recv_time=1762437883.0333343 server_ts=1762437883.033166 snapshot_id=157 seq=168
+[DELTA] Applied 0 changes (snapshot #158)
+✓ Applied delta snapshot #158
+SNAPSHOT recv_time=1762437883.0843105 server_ts=1762437883.0839627 snapshot_id=158 seq=169
+[DELTA] Applied 0 changes (snapshot #159)
+✓ Applied delta snapshot #159
+SNAPSHOT recv_time=1762437883.1363459 server_ts=1762437883.1359391 snapshot_id=159 seq=170
+[DELTA] Applied 0 changes (snapshot #160)
+✓ Applied delta snapshot #160
+SNAPSHOT recv_time=1762437883.1872745 server_ts=1762437883.1868114 snapshot_id=160 seq=171
+[DELTA] Applied 0 changes (snapshot #161)
+✓ Applied delta snapshot #161
+SNAPSHOT recv_time=1762437883.2382317 server_ts=1762437883.237756 snapshot_id=161 seq=172
+[DELTA] Applied 0 changes (snapshot #162)
+✓ Applied delta snapshot #162
+SNAPSHOT recv_time=1762437883.2892945 server_ts=1762437883.2886903 snapshot_id=162 seq=173
+[DELTA] Applied 0 changes (snapshot #163)
+✓ Applied delta snapshot #163
+SNAPSHOT recv_time=1762437883.3409772 server_ts=1762437883.3398933 snapshot_id=163 seq=174
+[DELTA] Applied 0 changes (snapshot #164)
+✓ Applied delta snapshot #164
+SNAPSHOT recv_time=1762437883.3920898 server_ts=1762437883.3911057 snapshot_id=164 seq=175
+[DELTA] Applied 0 changes (snapshot #165)
+✓ Applied delta snapshot #165
+SNAPSHOT recv_time=1762437883.4432948 server_ts=1762437883.442291 snapshot_id=165 seq=176
+[DELTA] Applied 0 changes (snapshot #166)
+✓ Applied delta snapshot #166
+SNAPSHOT recv_time=1762437883.4944944 server_ts=1762437883.4935222 snapshot_id=166 seq=177
+[DELTA] Applied 0 changes (snapshot #167)
+✓ Applied delta snapshot #167
+SNAPSHOT recv_time=1762437883.5456257 server_ts=1762437883.5446348 snapshot_id=167 seq=178
+[DELTA] Applied 0 changes (snapshot #168)
+✓ Applied delta snapshot #168
+SNAPSHOT recv_time=1762437883.5958593 server_ts=1762437883.5950046 snapshot_id=168 seq=179
+[DELTA] Applied 0 changes (snapshot #169)
+✓ Applied delta snapshot #169
+SNAPSHOT recv_time=1762437883.647234 server_ts=1762437883.6462655 snapshot_id=169 seq=180
+[DELTA] Applied 0 changes (snapshot #170)
+✓ Applied delta snapshot #170
+SNAPSHOT recv_time=1762437883.6985152 server_ts=1762437883.6975958 snapshot_id=170 seq=181
+[DELTA] Applied 0 changes (snapshot #171)
+✓ Applied delta snapshot #171
+SNAPSHOT recv_time=1762437883.7497983 server_ts=1762437883.7487986 snapshot_id=171 seq=182
+[DELTA] Applied 0 changes (snapshot #172)
+✓ Applied delta snapshot #172
+SNAPSHOT recv_time=1762437883.8003583 server_ts=1762437883.7993743 snapshot_id=172 seq=183
+[DELTA] Applied 0 changes (snapshot #173)
+✓ Applied delta snapshot #173
+SNAPSHOT recv_time=1762437883.8504233 server_ts=1762437883.8495953 snapshot_id=173 seq=184
+[DELTA] Applied 0 changes (snapshot #174)
+✓ Applied delta snapshot #174
+SNAPSHOT recv_time=1762437883.901711 server_ts=1762437883.9008267 snapshot_id=174 seq=185
+[DELTA] Applied 0 changes (snapshot #175)
+✓ Applied delta snapshot #175
+SNAPSHOT recv_time=1762437883.9527617 server_ts=1762437883.9518297 snapshot_id=175 seq=186
+[DELTA] Applied 0 changes (snapshot #176)
+✓ Applied delta snapshot #176
+SNAPSHOT recv_time=1762437884.0029173 server_ts=1762437884.0028296 snapshot_id=176 seq=187
+[DELTA] Applied 0 changes (snapshot #177)
+✓ Applied delta snapshot #177
+SNAPSHOT recv_time=1762437884.0540266 server_ts=1762437884.0537493 snapshot_id=177 seq=188
+[DELTA] Applied 0 changes (snapshot #178)
+✓ Applied delta snapshot #178
+SNAPSHOT recv_time=1762437884.1051013 server_ts=1762437884.1042678 snapshot_id=178 seq=189
+[DELTA] Applied 0 changes (snapshot #179)
+✓ Applied delta snapshot #179
+SNAPSHOT recv_time=1762437884.1563497 server_ts=1762437884.1556292 snapshot_id=179 seq=190
+[DELTA] Applied 0 changes (snapshot #180)
+✓ Applied delta snapshot #180
+SNAPSHOT recv_time=1762437884.2074828 server_ts=1762437884.2069483 snapshot_id=180 seq=191
+[DELTA] Applied 0 changes (snapshot #181)
+✓ Applied delta snapshot #181
+SNAPSHOT recv_time=1762437884.2587385 server_ts=1762437884.258285 snapshot_id=181 seq=192
+[DELTA] Applied 0 changes (snapshot #182)
+✓ Applied delta snapshot #182
+SNAPSHOT recv_time=1762437884.3098388 server_ts=1762437884.309588 snapshot_id=182 seq=193
+[DELTA] Applied 0 changes (snapshot #183)
+✓ Applied delta snapshot #183
+SNAPSHOT recv_time=1762437884.3599865 server_ts=1762437884.3596225 snapshot_id=183 seq=194
+[DELTA] Applied 0 changes (snapshot #184)
+✓ Applied delta snapshot #184
+SNAPSHOT recv_time=1762437884.4110274 server_ts=1762437884.4106917 snapshot_id=184 seq=195
+[DELTA] Applied 0 changes (snapshot #185)
+✓ Applied delta snapshot #185
+SNAPSHOT recv_time=1762437884.4621966 server_ts=1762437884.461827 snapshot_id=185 seq=196
+[DELTA] Applied 0 changes (snapshot #186)
+✓ Applied delta snapshot #186
+SNAPSHOT recv_time=1762437884.5135202 server_ts=1762437884.5131366 snapshot_id=186 seq=197
+[DELTA] Applied 0 changes (snapshot #187)
+✓ Applied delta snapshot #187
+SNAPSHOT recv_time=1762437884.5648167 server_ts=1762437884.564545 snapshot_id=187 seq=198
+[DELTA] Applied 0 changes (snapshot #188)
+✓ Applied delta snapshot #188
+SNAPSHOT recv_time=1762437884.6149724 server_ts=1762437884.614846 snapshot_id=188 seq=199
+[DELTA] Applied 0 changes (snapshot #189)
+✓ Applied delta snapshot #189
+SNAPSHOT recv_time=1762437884.666175 server_ts=1762437884.6658325 snapshot_id=189 seq=200
+[DELTA] Applied 0 changes (snapshot #190)
+✓ Applied delta snapshot #190
+SNAPSHOT recv_time=1762437884.7173493 server_ts=1762437884.7171912 snapshot_id=190 seq=201
+[DELTA] Applied 0 changes (snapshot #191)
+✓ Applied delta snapshot #191
+SNAPSHOT recv_time=1762437884.769608 server_ts=1762437884.7686164 snapshot_id=191 seq=202
+[DELTA] Applied 0 changes (snapshot #192)
+✓ Applied delta snapshot #192
+SNAPSHOT recv_time=1762437884.8207593 server_ts=1762437884.8197618 snapshot_id=192 seq=203
+[DELTA] Applied 0 changes (snapshot #193)
+✓ Applied delta snapshot #193
+SNAPSHOT recv_time=1762437884.8709855 server_ts=1762437884.8702807 snapshot_id=193 seq=204
+[DELTA] Applied 0 changes (snapshot #194)
+✓ Applied delta snapshot #194
+SNAPSHOT recv_time=1762437884.922112 server_ts=1762437884.921411 snapshot_id=194 seq=205
+[DELTA] Applied 0 changes (snapshot #195)
+✓ Applied delta snapshot #195
+SNAPSHOT recv_time=1762437884.9731438 server_ts=1762437884.9722838 snapshot_id=195 seq=206
+[DELTA] Applied 0 changes (snapshot #196)
+✓ Applied delta snapshot #196
+SNAPSHOT recv_time=1762437885.0243402 server_ts=1762437885.0232048 snapshot_id=196 seq=207
+[DELTA] Applied 0 changes (snapshot #197)
+✓ Applied delta snapshot #197
+SNAPSHOT recv_time=1762437885.0758228 server_ts=1762437885.07477 snapshot_id=197 seq=208
+[DELTA] Applied 0 changes (snapshot #198)
+✓ Applied delta snapshot #198
+SNAPSHOT recv_time=1762437885.1261475 server_ts=1762437885.1253998 snapshot_id=198 seq=209
+[DELTA] Applied 0 changes (snapshot #199)
+✓ Applied delta snapshot #199
+SNAPSHOT recv_time=1762437885.1771886 server_ts=1762437885.1765363 snapshot_id=199 seq=210
+[DELTA] Applied 0 changes (snapshot #200)
+✓ Applied delta snapshot #200
+SNAPSHOT recv_time=1762437885.2283044 server_ts=1762437885.2275853 snapshot_id=200 seq=211
+[DELTA] Applied 0 changes (snapshot #201)
+✓ Applied delta snapshot #201
+SNAPSHOT recv_time=1762437885.279352 server_ts=1762437885.278444 snapshot_id=201 seq=212
+[DELTA] Applied 0 changes (snapshot #202)
+✓ Applied delta snapshot #202
+SNAPSHOT recv_time=1762437885.3293238 server_ts=1762437885.3291886 snapshot_id=202 seq=213
+[DELTA] Applied 0 changes (snapshot #203)
+✓ Applied delta snapshot #203
+SNAPSHOT recv_time=1762437885.3805673 server_ts=1762437885.3797717 snapshot_id=203 seq=214
+[DELTA] Applied 0 changes (snapshot #204)
+✓ Applied delta snapshot #204
+SNAPSHOT recv_time=1762437885.4320378 server_ts=1762437885.4311073 snapshot_id=204 seq=215
+[DELTA] Applied 0 changes (snapshot #205)
+✓ Applied delta snapshot #205
+SNAPSHOT recv_time=1762437885.483237 server_ts=1762437885.482347 snapshot_id=205 seq=216
+[DELTA] Applied 0 changes (snapshot #206)
+✓ Applied delta snapshot #206
+SNAPSHOT recv_time=1762437885.5343513 server_ts=1762437885.533633 snapshot_id=206 seq=217
+[DELTA] Applied 0 changes (snapshot #207)
+✓ Applied delta snapshot #207
+SNAPSHOT recv_time=1762437885.5854063 server_ts=1762437885.5846672 snapshot_id=207 seq=218
+[DELTA] Applied 0 changes (snapshot #208)
+✓ Applied delta snapshot #208
+SNAPSHOT recv_time=1762437885.6376405 server_ts=1762437885.6366422 snapshot_id=208 seq=219
+[DELTA] Applied 0 changes (snapshot #209)
+✓ Applied delta snapshot #209
+SNAPSHOT recv_time=1762437885.6887813 server_ts=1762437885.687837 snapshot_id=209 seq=220
+[DELTA] Applied 0 changes (snapshot #210)
+✓ Applied delta snapshot #210
+SNAPSHOT recv_time=1762437885.740219 server_ts=1762437885.739919 snapshot_id=210 seq=221
+[DELTA] Applied 0 changes (snapshot #211)
+✓ Applied delta snapshot #211
+SNAPSHOT recv_time=1762437885.7926168 server_ts=1762437885.7916787 snapshot_id=211 seq=222
+[DELTA] Applied 0 changes (snapshot #212)
+✓ Applied delta snapshot #212
+SNAPSHOT recv_time=1762437885.8438914 server_ts=1762437885.843206 snapshot_id=212 seq=223
+[DELTA] Applied 0 changes (snapshot #213)
+✓ Applied delta snapshot #213
+SNAPSHOT recv_time=1762437885.8950481 server_ts=1762437885.8945208 snapshot_id=213 seq=224
+[DELTA] Applied 0 changes (snapshot #214)
+✓ Applied delta snapshot #214
+SNAPSHOT recv_time=1762437885.946024 server_ts=1762437885.94539 snapshot_id=214 seq=225
+[DELTA] Applied 0 changes (snapshot #215)
+✓ Applied delta snapshot #215
+SNAPSHOT recv_time=1762437885.9972365 server_ts=1762437885.9966862 snapshot_id=215 seq=226
+[DELTA] Applied 0 changes (snapshot #216)
+✓ Applied delta snapshot #216
+SNAPSHOT recv_time=1762437886.0483222 server_ts=1762437886.0479336 snapshot_id=216 seq=227
+[DELTA] Applied 0 changes (snapshot #217)
+✓ Applied delta snapshot #217
+SNAPSHOT recv_time=1762437886.0994306 server_ts=1762437886.0988383 snapshot_id=217 seq=228
+[DELTA] Applied 0 changes (snapshot #218)
+✓ Applied delta snapshot #218
+SNAPSHOT recv_time=1762437886.150505 server_ts=1762437886.1500285 snapshot_id=218 seq=229
+[DELTA] Applied 0 changes (snapshot #219)
+✓ Applied delta snapshot #219
+SNAPSHOT recv_time=1762437886.2016 server_ts=1762437886.201058 snapshot_id=219 seq=230
+[DELTA] Applied 0 changes (snapshot #220)
+✓ Applied delta snapshot #220
+SNAPSHOT recv_time=1762437886.2528658 server_ts=1762437886.2523775 snapshot_id=220 seq=231
+[DELTA] Applied 0 changes (snapshot #221)
+✓ Applied delta snapshot #221
+SNAPSHOT recv_time=1762437886.3040679 server_ts=1762437886.3035681 snapshot_id=221 seq=232
+[DELTA] Applied 0 changes (snapshot #222)
+✓ Applied delta snapshot #222
+SNAPSHOT recv_time=1762437886.3558757 server_ts=1762437886.3554437 snapshot_id=222 seq=233
+[DELTA] Applied 0 changes (snapshot #223)
+✓ Applied delta snapshot #223
+SNAPSHOT recv_time=1762437886.4062164 server_ts=1762437886.4052804 snapshot_id=223 seq=234
+[DELTA] Applied 0 changes (snapshot #224)
+✓ Applied delta snapshot #224
+SNAPSHOT recv_time=1762437886.457195 server_ts=1762437886.456382 snapshot_id=224 seq=235
+[DELTA] Applied 0 changes (snapshot #225)
+✓ Applied delta snapshot #225
+SNAPSHOT recv_time=1762437886.5083718 server_ts=1762437886.5078762 snapshot_id=225 seq=236
+[DELTA] Applied 0 changes (snapshot #226)
+✓ Applied delta snapshot #226
+SNAPSHOT recv_time=1762437886.559569 server_ts=1762437886.5594847 snapshot_id=226 seq=237
+[DELTA] Applied 0 changes (snapshot #227)
+✓ Applied delta snapshot #227
+SNAPSHOT recv_time=1762437886.6117523 server_ts=1762437886.6109624 snapshot_id=227 seq=238
+[DELTA] Applied 0 changes (snapshot #228)
+✓ Applied delta snapshot #228
+SNAPSHOT recv_time=1762437886.6628747 server_ts=1762437886.6620843 snapshot_id=228 seq=239
+[DELTA] Applied 0 changes (snapshot #229)
+✓ Applied delta snapshot #229
+SNAPSHOT recv_time=1762437886.7139103 server_ts=1762437886.7129333 snapshot_id=229 seq=240
+[DELTA] Applied 0 changes (snapshot #230)
+✓ Applied delta snapshot #230
+SNAPSHOT recv_time=1762437886.7639065 server_ts=1762437886.7637634 snapshot_id=230 seq=241
+[DELTA] Applied 0 changes (snapshot #231)
+✓ Applied delta snapshot #231
+SNAPSHOT recv_time=1762437886.8148985 server_ts=1762437886.8144407 snapshot_id=231 seq=242
+[DELTA] Applied 0 changes (snapshot #232)
+✓ Applied delta snapshot #232
+SNAPSHOT recv_time=1762437886.8669841 server_ts=1762437886.8662927 snapshot_id=232 seq=243
+[DELTA] Applied 0 changes (snapshot #233)
+✓ Applied delta snapshot #233
+SNAPSHOT recv_time=1762437886.9179866 server_ts=1762437886.9170556 snapshot_id=233 seq=244
+[DELTA] Applied 0 changes (snapshot #234)
+✓ Applied delta snapshot #234
+SNAPSHOT recv_time=1762437886.968929 server_ts=1762437886.9678428 snapshot_id=234 seq=245
+[DELTA] Applied 0 changes (snapshot #235)
+✓ Applied delta snapshot #235
+SNAPSHOT recv_time=1762437887.018861 server_ts=1762437887.0186334 snapshot_id=235 seq=246
+[DELTA] Applied 0 changes (snapshot #236)
+✓ Applied delta snapshot #236
+SNAPSHOT recv_time=1762437887.069866 server_ts=1762437887.0695245 snapshot_id=236 seq=247
+[DELTA] Applied 0 changes (snapshot #237)
+✓ Applied delta snapshot #237
+SNAPSHOT recv_time=1762437887.1198199 server_ts=1762437887.1196592 snapshot_id=237 seq=248
+[DELTA] Applied 0 changes (snapshot #238)
+✓ Applied delta snapshot #238
+SNAPSHOT recv_time=1762437887.170836 server_ts=1762437887.1704726 snapshot_id=238 seq=249
+[DELTA] Applied 0 changes (snapshot #239)
+✓ Applied delta snapshot #239
+SNAPSHOT recv_time=1762437887.2219684 server_ts=1762437887.2215154 snapshot_id=239 seq=250
+[DELTA] Applied 0 changes (snapshot #240)
+✓ Applied delta snapshot #240
+SNAPSHOT recv_time=1762437887.2730749 server_ts=1762437887.2723002 snapshot_id=240 seq=251
+[DELTA] Applied 0 changes (snapshot #241)
+✓ Applied delta snapshot #241
+SNAPSHOT recv_time=1762437887.324162 server_ts=1762437887.323101 snapshot_id=241 seq=252
+[DELTA] Applied 0 changes (snapshot #242)
+✓ Applied delta snapshot #242
+SNAPSHOT recv_time=1762437887.3752306 server_ts=1762437887.3749473 snapshot_id=242 seq=253
+[DELTA] Applied 0 changes (snapshot #243)
+✓ Applied delta snapshot #243
+SNAPSHOT recv_time=1762437887.4264052 server_ts=1762437887.4259996 snapshot_id=243 seq=254
+[DELTA] Applied 0 changes (snapshot #244)
+✓ Applied delta snapshot #244
+SNAPSHOT recv_time=1762437887.4774544 server_ts=1762437887.4771554 snapshot_id=244 seq=255
+[DELTA] Applied 0 changes (snapshot #245)
+✓ Applied delta snapshot #245
+SNAPSHOT recv_time=1762437887.5285358 server_ts=1762437887.5281305 snapshot_id=245 seq=256
+[DELTA] Applied 0 changes (snapshot #246)
+✓ Applied delta snapshot #246
+SNAPSHOT recv_time=1762437887.5797834 server_ts=1762437887.5793037 snapshot_id=246 seq=257
+[DELTA] Applied 0 changes (snapshot #247)
+✓ Applied delta snapshot #247
+SNAPSHOT recv_time=1762437887.6298647 server_ts=1762437887.6294255 snapshot_id=247 seq=258
+[DELTA] Applied 0 changes (snapshot #248)
+✓ Applied delta snapshot #248
+SNAPSHOT recv_time=1762437887.6809912 server_ts=1762437887.6805267 snapshot_id=248 seq=259
+[DELTA] Applied 0 changes (snapshot #249)
+✓ Applied delta snapshot #249
+SNAPSHOT recv_time=1762437887.732186 server_ts=1762437887.7315753 snapshot_id=249 seq=260
+[DELTA] Applied 0 changes (snapshot #250)
+✓ Applied delta snapshot #250
+SNAPSHOT recv_time=1762437887.7833006 server_ts=1762437887.782485 snapshot_id=250 seq=261
+[DELTA] Applied 0 changes (snapshot #251)
+✓ Applied delta snapshot #251
+SNAPSHOT recv_time=1762437887.8342106 server_ts=1762437887.8331556 snapshot_id=251 seq=262
+[DELTA] Applied 0 changes (snapshot #252)
+✓ Applied delta snapshot #252
+SNAPSHOT recv_time=1762437887.8862236 server_ts=1762437887.8852248 snapshot_id=252 seq=263
+[DELTA] Applied 0 changes (snapshot #253)
+✓ Applied delta snapshot #253
+SNAPSHOT recv_time=1762437887.937539 server_ts=1762437887.9364178 snapshot_id=253 seq=264
+[DELTA] Applied 0 changes (snapshot #254)
+✓ Applied delta snapshot #254
+SNAPSHOT recv_time=1762437887.988856 server_ts=1762437887.9879425 snapshot_id=254 seq=265
+[DELTA] Applied 0 changes (snapshot #255)
+✓ Applied delta snapshot #255
+SNAPSHOT recv_time=1762437888.0400286 server_ts=1762437888.0391085 snapshot_id=255 seq=266
+[DELTA] Applied 0 changes (snapshot #256)
+✓ Applied delta snapshot #256
+SNAPSHOT recv_time=1762437888.0912547 server_ts=1762437888.0904253 snapshot_id=256 seq=267
+[DELTA] Applied 0 changes (snapshot #257)
+✓ Applied delta snapshot #257
+SNAPSHOT recv_time=1762437888.1413696 server_ts=1762437888.1406343 snapshot_id=257 seq=268
+[DELTA] Applied 0 changes (snapshot #258)
+✓ Applied delta snapshot #258
+SNAPSHOT recv_time=1762437888.1924963 server_ts=1762437888.1916885 snapshot_id=258 seq=269
+[DELTA] Applied 0 changes (snapshot #259)
+✓ Applied delta snapshot #259
+SNAPSHOT recv_time=1762437888.2434416 server_ts=1762437888.2425082 snapshot_id=259 seq=270
+[DELTA] Applied 0 changes (snapshot #260)
+✓ Applied delta snapshot #260
+SNAPSHOT recv_time=1762437888.2944477 server_ts=1762437888.2933753 snapshot_id=260 seq=271
+[DELTA] Applied 0 changes (snapshot #261)
+✓ Applied delta snapshot #261
+SNAPSHOT recv_time=1762437888.3445957 server_ts=1762437888.3445382 snapshot_id=261 seq=272
+[DELTA] Applied 0 changes (snapshot #262)
+✓ Applied delta snapshot #262
+SNAPSHOT recv_time=1762437888.3958986 server_ts=1762437888.3947756 snapshot_id=262 seq=273
+[DELTA] Applied 0 changes (snapshot #263)
+✓ Applied delta snapshot #263
+SNAPSHOT recv_time=1762437888.4480155 server_ts=1762437888.4469337 snapshot_id=263 seq=274
+[DELTA] Applied 0 changes (snapshot #264)
+✓ Applied delta snapshot #264
+SNAPSHOT recv_time=1762437888.4991035 server_ts=1762437888.4980469 snapshot_id=264 seq=275
+[DELTA] Applied 0 changes (snapshot #265)
+✓ Applied delta snapshot #265
+SNAPSHOT recv_time=1762437888.549289 server_ts=1762437888.5491033 snapshot_id=265 seq=276
+[DELTA] Applied 0 changes (snapshot #266)
+✓ Applied delta snapshot #266
+SNAPSHOT recv_time=1762437888.6002948 server_ts=1762437888.5999281 snapshot_id=266 seq=277
+[DELTA] Applied 0 changes (snapshot #267)
+✓ Applied delta snapshot #267
+SNAPSHOT recv_time=1762437888.6512885 server_ts=1762437888.6507537 snapshot_id=267 seq=278
+[DELTA] Applied 0 changes (snapshot #268)
+✓ Applied delta snapshot #268
+SNAPSHOT recv_time=1762437888.7022622 server_ts=1762437888.7015927 snapshot_id=268 seq=279
+[DELTA] Applied 0 changes (snapshot #269)
+✓ Applied delta snapshot #269
+SNAPSHOT recv_time=1762437888.7532263 server_ts=1762437888.7523756 snapshot_id=269 seq=280
+[DELTA] Applied 0 changes (snapshot #270)
+✓ Applied delta snapshot #270
+SNAPSHOT recv_time=1762437888.804208 server_ts=1762437888.8032358 snapshot_id=270 seq=281
+[DELTA] Applied 0 changes (snapshot #271)
+✓ Applied delta snapshot #271
+SNAPSHOT recv_time=1762437888.8544638 server_ts=1762437888.8533664 snapshot_id=271 seq=282
+[DELTA] Applied 0 changes (snapshot #272)
+✓ Applied delta snapshot #272
+SNAPSHOT recv_time=1762437888.9047165 server_ts=1762437888.90445 snapshot_id=272 seq=283
+[DELTA] Applied 0 changes (snapshot #273)
+✓ Applied delta snapshot #273
+SNAPSHOT recv_time=1762437888.9560719 server_ts=1762437888.95552 snapshot_id=273 seq=284
+[DELTA] Applied 0 changes (snapshot #274)
+✓ Applied delta snapshot #274
+SNAPSHOT recv_time=1762437889.0073571 server_ts=1762437889.0065405 snapshot_id=274 seq=285
+[DELTA] Applied 0 changes (snapshot #275)
+✓ Applied delta snapshot #275
+SNAPSHOT recv_time=1762437889.0584693 server_ts=1762437889.0576963 snapshot_id=275 seq=286
+[DELTA] Applied 0 changes (snapshot #276)
+✓ Applied delta snapshot #276
+SNAPSHOT recv_time=1762437889.1085606 server_ts=1762437889.1078029 snapshot_id=276 seq=287
+[DELTA] Applied 0 changes (snapshot #277)
+✓ Applied delta snapshot #277
+SNAPSHOT recv_time=1762437889.1597302 server_ts=1762437889.1590955 snapshot_id=277 seq=288
+[DELTA] Applied 0 changes (snapshot #278)
+✓ Applied delta snapshot #278
+SNAPSHOT recv_time=1762437889.2109191 server_ts=1762437889.2103844 snapshot_id=278 seq=289
+[DELTA] Applied 0 changes (snapshot #279)
+✓ Applied delta snapshot #279
+SNAPSHOT recv_time=1762437889.2619264 server_ts=1762437889.2612119 snapshot_id=279 seq=290
+[DELTA] Applied 0 changes (snapshot #280)
+✓ Applied delta snapshot #280
+SNAPSHOT recv_time=1762437889.312921 server_ts=1762437889.3121116 snapshot_id=280 seq=291
+[DELTA] Applied 0 changes (snapshot #281)
+✓ Applied delta snapshot #281
+SNAPSHOT recv_time=1762437889.3631158 server_ts=1762437889.3620775 snapshot_id=281 seq=292
+[DELTA] Applied 0 changes (snapshot #282)
+✓ Applied delta snapshot #282
+SNAPSHOT recv_time=1762437889.4137354 server_ts=1762437889.4134316 snapshot_id=282 seq=293
+[DELTA] Applied 0 changes (snapshot #283)
+✓ Applied delta snapshot #283
+SNAPSHOT recv_time=1762437889.4648163 server_ts=1762437889.4646244 snapshot_id=283 seq=294
+[DELTA] Applied 0 changes (snapshot #284)
+✓ Applied delta snapshot #284
+SNAPSHOT recv_time=1762437889.5158024 server_ts=1762437889.5156991 snapshot_id=284 seq=295
+[DELTA] Applied 0 changes (snapshot #285)
+✓ Applied delta snapshot #285
+SNAPSHOT recv_time=1762437889.566872 server_ts=1762437889.566761 snapshot_id=285 seq=296
+[DELTA] Applied 0 changes (snapshot #286)
+✓ Applied delta snapshot #286
+SNAPSHOT recv_time=1762437889.6169834 server_ts=1762437889.616752 snapshot_id=286 seq=297
+[DELTA] Applied 0 changes (snapshot #287)
+✓ Applied delta snapshot #287
+SNAPSHOT recv_time=1762437889.6680162 server_ts=1762437889.6675074 snapshot_id=287 seq=298
+[DELTA] Applied 0 changes (snapshot #288)
+✓ Applied delta snapshot #288
+SNAPSHOT recv_time=1762437889.7190208 server_ts=1762437889.718343 snapshot_id=288 seq=299
+[DELTA] Applied 0 changes (snapshot #289)
+✓ Applied delta snapshot #289
+SNAPSHOT recv_time=1762437889.7700768 server_ts=1762437889.7691686 snapshot_id=289 seq=300
+[DELTA] Applied 0 changes (snapshot #290)
+✓ Applied delta snapshot #290
+SNAPSHOT recv_time=1762437889.8200378 server_ts=1762437889.8197854 snapshot_id=290 seq=301
+[DELTA] Applied 0 changes (snapshot #291)
+✓ Applied delta snapshot #291
+SNAPSHOT recv_time=1762437889.8722217 server_ts=1762437889.8718913 snapshot_id=291 seq=302
+[DELTA] Applied 0 changes (snapshot #292)
+✓ Applied delta snapshot #292
+SNAPSHOT recv_time=1762437889.923492 server_ts=1762437889.9230587 snapshot_id=292 seq=303
+[DELTA] Applied 0 changes (snapshot #293)
+✓ Applied delta snapshot #293
+SNAPSHOT recv_time=1762437889.9747422 server_ts=1762437889.9745696 snapshot_id=293 seq=304
+📦 Sent ACQUIRE event (5,2)
+[DELTA] Applied 3 changes (snapshot #294)
+✓ Applied delta snapshot #294
+SNAPSHOT recv_time=1762437890.0271735 server_ts=1762437890.0261798 snapshot_id=294 seq=305
+📦 Sent ACQUIRE event (3,6)
+[DELTA] Applied 2 changes (snapshot #295)
+✓ Applied delta snapshot #295
+SNAPSHOT recv_time=1762437890.0782878 server_ts=1762437890.07748 snapshot_id=295 seq=306

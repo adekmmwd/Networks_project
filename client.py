@@ -2,6 +2,7 @@ import socket
 import json
 import uuid
 import time
+import random
 from collections import deque
 from enum import Enum, auto
 from header import (
@@ -146,7 +147,7 @@ class ClientFSM:
             self.last_send_time = now
 
         header, payload = self.recv_packet()
-        if header and header["msg_type"] == MSG_READY_ACK:
+        if header and header["msg_type"] == MSG_READY_ACK :
             print("✓ READY_ACK received. Waiting for start snapshot.")
             self.transition(ClientState.WAIT_FOR_STARTGAME)
 
@@ -243,7 +244,8 @@ class ClientFSM:
         now = time.time()
         # This is the test-stub logic for sending an acquire event
         if int(now) % 10 == 0 and not self.pending_acquire:
-            x, y = 5, 7
+            x= random.randint(0, 19)
+            y= random.randint(0, 19)
 
             # This is already correct: {"x": ..., "y": ...}
             payload_dictionary = {"x": x, "y": y}
