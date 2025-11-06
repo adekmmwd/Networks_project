@@ -1,269 +1,352 @@
 Server started. Waiting for players...
-Player 6adf9788 joined from ('127.0.0.1', 49295)
-Player 6adf9788 is ready (1/1)
-Player 55b0757a joined from ('127.0.0.1', 49750)
+Player 13efa00c joined from ('127.0.0.1', 60645)
+Player 13efa00c is ready (1/1)
+Player 0ccaf89c joined from ('127.0.0.1', 48939)
 Conditions met, moving to INIT state.
 Sending initial snapshot...
-Sent initial snapshot to Player 6adf9788
-Sent initial snapshot to Player 55b0757a
+Sent initial snapshot to Player 13efa00c
+Sent initial snapshot to Player 0ccaf89c
 Entering GAME_LOOP...
-SNAPSHOT_SEND server_ts=1762432444.015538 snapshot_id=1 seq=6
-SNAPSHOT_SEND server_ts=1762432444.0155537 snapshot_id=1 seq=6
-SNAPSHOT_SEND server_ts=1762432444.0665936 snapshot_id=2 seq=7
-SNAPSHOT_SEND server_ts=1762432444.066609 snapshot_id=2 seq=7
-SNAPSHOT_SEND server_ts=1762432444.117723 snapshot_id=3 seq=8
-SNAPSHOT_SEND server_ts=1762432444.117738 snapshot_id=3 seq=8
-SNAPSHOT_SEND server_ts=1762432444.1685934 snapshot_id=4 seq=9
-SNAPSHOT_SEND server_ts=1762432444.1686075 snapshot_id=4 seq=9
-SNAPSHOT_SEND server_ts=1762432444.2207127 snapshot_id=5 seq=10
-SNAPSHOT_SEND server_ts=1762432444.220728 snapshot_id=5 seq=10
-SNAPSHOT_SEND server_ts=1762432444.273548 snapshot_id=6 seq=11
-SNAPSHOT_SEND server_ts=1762432444.2735965 snapshot_id=6 seq=11
-SNAPSHOT_SEND server_ts=1762432444.3230698 snapshot_id=7 seq=12
-SNAPSHOT_SEND server_ts=1762432444.323083 snapshot_id=7 seq=12
-SNAPSHOT_SEND server_ts=1762432444.374169 snapshot_id=8 seq=13
-SNAPSHOT_SEND server_ts=1762432444.3741841 snapshot_id=8 seq=13
-SNAPSHOT_SEND server_ts=1762432444.4248068 snapshot_id=9 seq=14
-SNAPSHOT_SEND server_ts=1762432444.4248219 snapshot_id=9 seq=14
-SNAPSHOT_SEND server_ts=1762432444.4754534 snapshot_id=10 seq=15
-SNAPSHOT_SEND server_ts=1762432444.4754672 snapshot_id=10 seq=15
-SNAPSHOT_SEND server_ts=1762432444.5264208 snapshot_id=11 seq=16
-SNAPSHOT_SEND server_ts=1762432444.5264366 snapshot_id=11 seq=16
-SNAPSHOT_SEND server_ts=1762432444.5772853 snapshot_id=12 seq=17
-SNAPSHOT_SEND server_ts=1762432444.5773008 snapshot_id=12 seq=17
-SNAPSHOT_SEND server_ts=1762432444.6282363 snapshot_id=13 seq=18
-SNAPSHOT_SEND server_ts=1762432444.628261 snapshot_id=13 seq=18
-SNAPSHOT_SEND server_ts=1762432444.679039 snapshot_id=14 seq=19
-SNAPSHOT_SEND server_ts=1762432444.6790543 snapshot_id=14 seq=19
-SNAPSHOT_SEND server_ts=1762432444.7291505 snapshot_id=15 seq=20
-SNAPSHOT_SEND server_ts=1762432444.7291687 snapshot_id=15 seq=20
-SNAPSHOT_SEND server_ts=1762432444.7794242 snapshot_id=16 seq=21
-SNAPSHOT_SEND server_ts=1762432444.7794392 snapshot_id=16 seq=21
-SNAPSHOT_SEND server_ts=1762432444.8303394 snapshot_id=17 seq=22
-SNAPSHOT_SEND server_ts=1762432444.8303537 snapshot_id=17 seq=22
-SNAPSHOT_SEND server_ts=1762432444.8812978 snapshot_id=18 seq=23
-SNAPSHOT_SEND server_ts=1762432444.8813133 snapshot_id=18 seq=23
-SNAPSHOT_SEND server_ts=1762432444.9323802 snapshot_id=19 seq=24
-SNAPSHOT_SEND server_ts=1762432444.9323926 snapshot_id=19 seq=24
-SNAPSHOT_SEND server_ts=1762432444.9842677 snapshot_id=20 seq=25
-SNAPSHOT_SEND server_ts=1762432444.9842887 snapshot_id=20 seq=25
-SNAPSHOT_SEND server_ts=1762432445.0362272 snapshot_id=21 seq=26
-SNAPSHOT_SEND server_ts=1762432445.0362496 snapshot_id=21 seq=26
-SNAPSHOT_SEND server_ts=1762432445.0870054 snapshot_id=22 seq=27
-SNAPSHOT_SEND server_ts=1762432445.087021 snapshot_id=22 seq=27
-SNAPSHOT_SEND server_ts=1762432445.1378572 snapshot_id=23 seq=28
-SNAPSHOT_SEND server_ts=1762432445.137873 snapshot_id=23 seq=28
-SNAPSHOT_SEND server_ts=1762432445.1887462 snapshot_id=24 seq=29
-SNAPSHOT_SEND server_ts=1762432445.188762 snapshot_id=24 seq=29
-SNAPSHOT_SEND server_ts=1762432445.2406194 snapshot_id=25 seq=30
-SNAPSHOT_SEND server_ts=1762432445.2406347 snapshot_id=25 seq=30
-SNAPSHOT_SEND server_ts=1762432445.2927172 snapshot_id=26 seq=31
-SNAPSHOT_SEND server_ts=1762432445.292734 snapshot_id=26 seq=31
-SNAPSHOT_SEND server_ts=1762432445.344053 snapshot_id=27 seq=32
-SNAPSHOT_SEND server_ts=1762432445.344068 snapshot_id=27 seq=32
-SNAPSHOT_SEND server_ts=1762432445.3949294 snapshot_id=28 seq=33
-SNAPSHOT_SEND server_ts=1762432445.394945 snapshot_id=28 seq=33
-SNAPSHOT_SEND server_ts=1762432445.44579 snapshot_id=29 seq=34
-SNAPSHOT_SEND server_ts=1762432445.4458058 snapshot_id=29 seq=34
-SNAPSHOT_SEND server_ts=1762432445.4977026 snapshot_id=30 seq=35
-SNAPSHOT_SEND server_ts=1762432445.4977164 snapshot_id=30 seq=35
-SNAPSHOT_SEND server_ts=1762432445.5483963 snapshot_id=31 seq=36
-SNAPSHOT_SEND server_ts=1762432445.5484118 snapshot_id=31 seq=36
-SNAPSHOT_SEND server_ts=1762432445.5988107 snapshot_id=32 seq=37
-SNAPSHOT_SEND server_ts=1762432445.5988262 snapshot_id=32 seq=37
-SNAPSHOT_SEND server_ts=1762432445.6509802 snapshot_id=33 seq=38
-SNAPSHOT_SEND server_ts=1762432445.650999 snapshot_id=33 seq=38
-SNAPSHOT_SEND server_ts=1762432445.7024045 snapshot_id=34 seq=39
-SNAPSHOT_SEND server_ts=1762432445.7024195 snapshot_id=34 seq=39
-SNAPSHOT_SEND server_ts=1762432445.7524145 snapshot_id=35 seq=40
-SNAPSHOT_SEND server_ts=1762432445.7524285 snapshot_id=35 seq=40
-SNAPSHOT_SEND server_ts=1762432445.8044615 snapshot_id=36 seq=41
-SNAPSHOT_SEND server_ts=1762432445.804474 snapshot_id=36 seq=41
-SNAPSHOT_SEND server_ts=1762432445.8546414 snapshot_id=37 seq=42
-SNAPSHOT_SEND server_ts=1762432445.854657 snapshot_id=37 seq=42
-SNAPSHOT_SEND server_ts=1762432445.9065263 snapshot_id=38 seq=43
-SNAPSHOT_SEND server_ts=1762432445.9065416 snapshot_id=38 seq=43
-SNAPSHOT_SEND server_ts=1762432445.9581702 snapshot_id=39 seq=44
-SNAPSHOT_SEND server_ts=1762432445.9581962 snapshot_id=39 seq=44
-SNAPSHOT_SEND server_ts=1762432446.0104282 snapshot_id=40 seq=45
-SNAPSHOT_SEND server_ts=1762432446.0104535 snapshot_id=40 seq=45
-SNAPSHOT_SEND server_ts=1762432446.0609396 snapshot_id=41 seq=46
-SNAPSHOT_SEND server_ts=1762432446.0609598 snapshot_id=41 seq=46
-SNAPSHOT_SEND server_ts=1762432446.1117883 snapshot_id=42 seq=47
-SNAPSHOT_SEND server_ts=1762432446.111813 snapshot_id=42 seq=47
-SNAPSHOT_SEND server_ts=1762432446.1633918 snapshot_id=43 seq=48
-SNAPSHOT_SEND server_ts=1762432446.1634142 snapshot_id=43 seq=48
-SNAPSHOT_SEND server_ts=1762432446.2143352 snapshot_id=44 seq=49
-SNAPSHOT_SEND server_ts=1762432446.2143497 snapshot_id=44 seq=49
-SNAPSHOT_SEND server_ts=1762432446.2652051 snapshot_id=45 seq=50
-SNAPSHOT_SEND server_ts=1762432446.2652206 snapshot_id=45 seq=50
-SNAPSHOT_SEND server_ts=1762432446.316963 snapshot_id=46 seq=51
-SNAPSHOT_SEND server_ts=1762432446.3169801 snapshot_id=46 seq=51
-SNAPSHOT_SEND server_ts=1762432446.3671865 snapshot_id=47 seq=52
-SNAPSHOT_SEND server_ts=1762432446.3671994 snapshot_id=47 seq=52
-SNAPSHOT_SEND server_ts=1762432446.4192486 snapshot_id=48 seq=53
-SNAPSHOT_SEND server_ts=1762432446.4192648 snapshot_id=48 seq=53
-SNAPSHOT_SEND server_ts=1762432446.4699078 snapshot_id=49 seq=54
-SNAPSHOT_SEND server_ts=1762432446.469919 snapshot_id=49 seq=54
-SNAPSHOT_SEND server_ts=1762432446.520548 snapshot_id=50 seq=55
-SNAPSHOT_SEND server_ts=1762432446.5205655 snapshot_id=50 seq=55
-SNAPSHOT_SEND server_ts=1762432446.572211 snapshot_id=51 seq=56
-SNAPSHOT_SEND server_ts=1762432446.5722258 snapshot_id=51 seq=56
-SNAPSHOT_SEND server_ts=1762432446.6235783 snapshot_id=52 seq=57
-SNAPSHOT_SEND server_ts=1762432446.6235936 snapshot_id=52 seq=57
-SNAPSHOT_SEND server_ts=1762432446.6743295 snapshot_id=53 seq=58
-SNAPSHOT_SEND server_ts=1762432446.6743443 snapshot_id=53 seq=58
-SNAPSHOT_SEND server_ts=1762432446.724576 snapshot_id=54 seq=59
-SNAPSHOT_SEND server_ts=1762432446.7245944 snapshot_id=54 seq=59
-SNAPSHOT_SEND server_ts=1762432446.7748709 snapshot_id=55 seq=60
-SNAPSHOT_SEND server_ts=1762432446.7748857 snapshot_id=55 seq=60
-SNAPSHOT_SEND server_ts=1762432446.8251183 snapshot_id=56 seq=61
-SNAPSHOT_SEND server_ts=1762432446.8251333 snapshot_id=56 seq=61
-SNAPSHOT_SEND server_ts=1762432446.8764246 snapshot_id=57 seq=62
-SNAPSHOT_SEND server_ts=1762432446.876439 snapshot_id=57 seq=62
-SNAPSHOT_SEND server_ts=1762432446.9277084 snapshot_id=58 seq=63
-SNAPSHOT_SEND server_ts=1762432446.9277284 snapshot_id=58 seq=63
-SNAPSHOT_SEND server_ts=1762432446.9788833 snapshot_id=59 seq=64
-SNAPSHOT_SEND server_ts=1762432446.9788985 snapshot_id=59 seq=64
-SNAPSHOT_SEND server_ts=1762432447.029724 snapshot_id=60 seq=65
-SNAPSHOT_SEND server_ts=1762432447.0297363 snapshot_id=60 seq=65
-SNAPSHOT_SEND server_ts=1762432447.0803847 snapshot_id=61 seq=66
-SNAPSHOT_SEND server_ts=1762432447.0804 snapshot_id=61 seq=66
-SNAPSHOT_SEND server_ts=1762432447.1317863 snapshot_id=62 seq=67
-SNAPSHOT_SEND server_ts=1762432447.1318018 snapshot_id=62 seq=67
-SNAPSHOT_SEND server_ts=1762432447.182778 snapshot_id=63 seq=68
-SNAPSHOT_SEND server_ts=1762432447.182792 snapshot_id=63 seq=68
-SNAPSHOT_SEND server_ts=1762432447.2341948 snapshot_id=64 seq=69
-SNAPSHOT_SEND server_ts=1762432447.234211 snapshot_id=64 seq=69
-SNAPSHOT_SEND server_ts=1762432447.2843337 snapshot_id=65 seq=70
-SNAPSHOT_SEND server_ts=1762432447.284349 snapshot_id=65 seq=70
-SNAPSHOT_SEND server_ts=1762432447.336473 snapshot_id=66 seq=71
-SNAPSHOT_SEND server_ts=1762432447.3364878 snapshot_id=66 seq=71
-SNAPSHOT_SEND server_ts=1762432447.3874826 snapshot_id=67 seq=72
-SNAPSHOT_SEND server_ts=1762432447.3874972 snapshot_id=67 seq=72
-SNAPSHOT_SEND server_ts=1762432447.4386148 snapshot_id=68 seq=73
-SNAPSHOT_SEND server_ts=1762432447.4386275 snapshot_id=68 seq=73
-SNAPSHOT_SEND server_ts=1762432447.489545 snapshot_id=69 seq=74
-SNAPSHOT_SEND server_ts=1762432447.48956 snapshot_id=69 seq=74
-SNAPSHOT_SEND server_ts=1762432447.5398757 snapshot_id=70 seq=75
-SNAPSHOT_SEND server_ts=1762432447.5398912 snapshot_id=70 seq=75
-SNAPSHOT_SEND server_ts=1762432447.5899296 snapshot_id=71 seq=76
-SNAPSHOT_SEND server_ts=1762432447.589947 snapshot_id=71 seq=76
-SNAPSHOT_SEND server_ts=1762432447.640975 snapshot_id=72 seq=77
-SNAPSHOT_SEND server_ts=1762432447.6409898 snapshot_id=72 seq=77
-SNAPSHOT_SEND server_ts=1762432447.6921139 snapshot_id=73 seq=78
-SNAPSHOT_SEND server_ts=1762432447.6921291 snapshot_id=73 seq=78
-SNAPSHOT_SEND server_ts=1762432447.7425163 snapshot_id=74 seq=79
-SNAPSHOT_SEND server_ts=1762432447.7425287 snapshot_id=74 seq=79
-SNAPSHOT_SEND server_ts=1762432447.7926452 snapshot_id=75 seq=80
-SNAPSHOT_SEND server_ts=1762432447.7926579 snapshot_id=75 seq=80
-SNAPSHOT_SEND server_ts=1762432447.8427713 snapshot_id=76 seq=81
-SNAPSHOT_SEND server_ts=1762432447.8427837 snapshot_id=76 seq=81
-SNAPSHOT_SEND server_ts=1762432447.8937154 snapshot_id=77 seq=82
-SNAPSHOT_SEND server_ts=1762432447.8937347 snapshot_id=77 seq=82
-SNAPSHOT_SEND server_ts=1762432447.944618 snapshot_id=78 seq=83
-SNAPSHOT_SEND server_ts=1762432447.944633 snapshot_id=78 seq=83
-SNAPSHOT_SEND server_ts=1762432447.9949813 snapshot_id=79 seq=84
-SNAPSHOT_SEND server_ts=1762432447.9949963 snapshot_id=79 seq=84
-SNAPSHOT_SEND server_ts=1762432448.0450282 snapshot_id=80 seq=85
-SNAPSHOT_SEND server_ts=1762432448.0450406 snapshot_id=80 seq=85
-SNAPSHOT_SEND server_ts=1762432448.0971768 snapshot_id=81 seq=86
-SNAPSHOT_SEND server_ts=1762432448.097192 snapshot_id=81 seq=86
-SNAPSHOT_SEND server_ts=1762432448.1483264 snapshot_id=82 seq=87
-SNAPSHOT_SEND server_ts=1762432448.1483412 snapshot_id=82 seq=87
-SNAPSHOT_SEND server_ts=1762432448.1993937 snapshot_id=83 seq=88
-SNAPSHOT_SEND server_ts=1762432448.1994078 snapshot_id=83 seq=88
-SNAPSHOT_SEND server_ts=1762432448.2513733 snapshot_id=84 seq=89
-SNAPSHOT_SEND server_ts=1762432448.2513888 snapshot_id=84 seq=89
-SNAPSHOT_SEND server_ts=1762432448.3017929 snapshot_id=85 seq=90
-SNAPSHOT_SEND server_ts=1762432448.301808 snapshot_id=85 seq=90
-SNAPSHOT_SEND server_ts=1762432448.3519042 snapshot_id=86 seq=91
-SNAPSHOT_SEND server_ts=1762432448.3519194 snapshot_id=86 seq=91
-SNAPSHOT_SEND server_ts=1762432448.4026163 snapshot_id=87 seq=92
-SNAPSHOT_SEND server_ts=1762432448.4026325 snapshot_id=87 seq=92
-SNAPSHOT_SEND server_ts=1762432448.4533978 snapshot_id=88 seq=93
-SNAPSHOT_SEND server_ts=1762432448.4534128 snapshot_id=88 seq=93
-SNAPSHOT_SEND server_ts=1762432448.5040336 snapshot_id=89 seq=94
-SNAPSHOT_SEND server_ts=1762432448.504048 snapshot_id=89 seq=94
-SNAPSHOT_SEND server_ts=1762432448.5546117 snapshot_id=90 seq=95
-SNAPSHOT_SEND server_ts=1762432448.55463 snapshot_id=90 seq=95
-SNAPSHOT_SEND server_ts=1762432448.6050491 snapshot_id=91 seq=96
-SNAPSHOT_SEND server_ts=1762432448.6050644 snapshot_id=91 seq=96
-SNAPSHOT_SEND server_ts=1762432448.656192 snapshot_id=92 seq=97
-SNAPSHOT_SEND server_ts=1762432448.6562078 snapshot_id=92 seq=97
-SNAPSHOT_SEND server_ts=1762432448.7071962 snapshot_id=93 seq=98
-SNAPSHOT_SEND server_ts=1762432448.7072124 snapshot_id=93 seq=98
-SNAPSHOT_SEND server_ts=1762432448.75926 snapshot_id=94 seq=99
-SNAPSHOT_SEND server_ts=1762432448.759277 snapshot_id=94 seq=99
-SNAPSHOT_SEND server_ts=1762432448.8096519 snapshot_id=95 seq=100
-SNAPSHOT_SEND server_ts=1762432448.8096664 snapshot_id=95 seq=100
-SNAPSHOT_SEND server_ts=1762432448.8603497 snapshot_id=96 seq=101
-SNAPSHOT_SEND server_ts=1762432448.8603642 snapshot_id=96 seq=101
-SNAPSHOT_SEND server_ts=1762432448.9122815 snapshot_id=97 seq=102
-SNAPSHOT_SEND server_ts=1762432448.9122963 snapshot_id=97 seq=102
-SNAPSHOT_SEND server_ts=1762432448.963751 snapshot_id=98 seq=103
-SNAPSHOT_SEND server_ts=1762432448.9637709 snapshot_id=98 seq=103
-SNAPSHOT_SEND server_ts=1762432449.0139515 snapshot_id=99 seq=104
-SNAPSHOT_SEND server_ts=1762432449.01397 snapshot_id=99 seq=104
-SNAPSHOT_SEND server_ts=1762432449.0641038 snapshot_id=100 seq=105
-SNAPSHOT_SEND server_ts=1762432449.0641174 snapshot_id=100 seq=105
-SNAPSHOT_SEND server_ts=1762432449.114413 snapshot_id=101 seq=106
-SNAPSHOT_SEND server_ts=1762432449.1144285 snapshot_id=101 seq=106
-SNAPSHOT_SEND server_ts=1762432449.1656992 snapshot_id=102 seq=107
-SNAPSHOT_SEND server_ts=1762432449.1657243 snapshot_id=102 seq=107
-SNAPSHOT_SEND server_ts=1762432449.217088 snapshot_id=103 seq=108
-SNAPSHOT_SEND server_ts=1762432449.217104 snapshot_id=103 seq=108
-SNAPSHOT_SEND server_ts=1762432449.2683263 snapshot_id=104 seq=109
-SNAPSHOT_SEND server_ts=1762432449.26835 snapshot_id=104 seq=109
-SNAPSHOT_SEND server_ts=1762432449.3190928 snapshot_id=105 seq=110
-SNAPSHOT_SEND server_ts=1762432449.3191078 snapshot_id=105 seq=110
-SNAPSHOT_SEND server_ts=1762432449.3697338 snapshot_id=106 seq=111
-SNAPSHOT_SEND server_ts=1762432449.3697476 snapshot_id=106 seq=111
-SNAPSHOT_SEND server_ts=1762432449.4205964 snapshot_id=107 seq=112
-SNAPSHOT_SEND server_ts=1762432449.42063 snapshot_id=107 seq=112
-SNAPSHOT_SEND server_ts=1762432449.4717448 snapshot_id=108 seq=113
-SNAPSHOT_SEND server_ts=1762432449.471765 snapshot_id=108 seq=113
-SNAPSHOT_SEND server_ts=1762432449.521775 snapshot_id=109 seq=114
-SNAPSHOT_SEND server_ts=1762432449.5217927 snapshot_id=109 seq=114
-SNAPSHOT_SEND server_ts=1762432449.5729175 snapshot_id=110 seq=115
-SNAPSHOT_SEND server_ts=1762432449.5729315 snapshot_id=110 seq=115
-SNAPSHOT_SEND server_ts=1762432449.6241026 snapshot_id=111 seq=116
-SNAPSHOT_SEND server_ts=1762432449.6241195 snapshot_id=111 seq=116
-SNAPSHOT_SEND server_ts=1762432449.675063 snapshot_id=112 seq=117
-SNAPSHOT_SEND server_ts=1762432449.6750803 snapshot_id=112 seq=117
-SNAPSHOT_SEND server_ts=1762432449.7259002 snapshot_id=113 seq=118
-SNAPSHOT_SEND server_ts=1762432449.7259116 snapshot_id=113 seq=118
-SNAPSHOT_SEND server_ts=1762432449.7780073 snapshot_id=114 seq=119
-SNAPSHOT_SEND server_ts=1762432449.7780197 snapshot_id=114 seq=119
-SNAPSHOT_SEND server_ts=1762432449.8280704 snapshot_id=115 seq=120
-SNAPSHOT_SEND server_ts=1762432449.8280888 snapshot_id=115 seq=120
-SNAPSHOT_SEND server_ts=1762432449.8791032 snapshot_id=116 seq=121
-SNAPSHOT_SEND server_ts=1762432449.8791187 snapshot_id=116 seq=121
-SNAPSHOT_SEND server_ts=1762432449.9303756 snapshot_id=117 seq=122
-SNAPSHOT_SEND server_ts=1762432449.9304006 snapshot_id=117 seq=122
-SNAPSHOT_SEND server_ts=1762432449.9815407 snapshot_id=118 seq=123
-SNAPSHOT_SEND server_ts=1762432449.9815536 snapshot_id=118 seq=123
-Player 6adf9788 acquired cell (5, 7)
+Player 13efa00c acquired cell (5, 7)
 All cells claimed — ending game.
 
 --- GAME OVER ---
-Game ended at: 2025-11-06 14:34:10
-Total game duration: 6.04 seconds
+Game ended at: 2025-11-06 14:43:00
+Total game duration: 0.0 seconds
 
 === FINAL LEADERBOARD ===
-1. Player 6adf9788 — Score: 1
-2. Player 55b0757a — Score: 0
+1. Player 13efa00c — Score: 1
+2. Player 0ccaf89c — Score: 0
 ==========================
 
-Leaderboard sent to Player 6adf9788
-Leaderboard sent to Player 55b0757a
+Leaderboard sent to Player 13efa00c
+Leaderboard sent to Player 0ccaf89c
 Game session ended. Server ready for next round.
-Player 9e01dcee joined from ('127.0.0.1', 41803)
-Player 9e01dcee is ready (1/1)
-Player 6a4cb704 joined from ('127.0.0.1', 36810)
+Player 7121216a joined from ('127.0.0.1', 36264)
+Player 7121216a is ready (1/1)
+Player 2333171c joined from ('127.0.0.1', 52089)
 Conditions met, moving to INIT state.
 Sending initial snapshot...
-Sent initial snapshot to Player 9e01dcee
-Sent initial snapshot to Player 6a4cb704
+Sent initial snapshot to Player 7121216a
+Sent initial snapshot to Player 2333171c
 Entering GAME_LOOP...
-Player 9e01dcee acquired cell (5, 7)
+SNAPSHOT_SEND server_ts=1762432982.29631 snapshot_id=1 seq=6
+SNAPSHOT_SEND server_ts=1762432982.296327 snapshot_id=1 seq=6
+SNAPSHOT_SEND server_ts=1762432982.3472083 snapshot_id=2 seq=7
+SNAPSHOT_SEND server_ts=1762432982.3472242 snapshot_id=2 seq=7
+SNAPSHOT_SEND server_ts=1762432982.399173 snapshot_id=3 seq=8
+SNAPSHOT_SEND server_ts=1762432982.3991876 snapshot_id=3 seq=8
+SNAPSHOT_SEND server_ts=1762432982.4499984 snapshot_id=4 seq=9
+SNAPSHOT_SEND server_ts=1762432982.4500132 snapshot_id=4 seq=9
+SNAPSHOT_SEND server_ts=1762432982.5001206 snapshot_id=5 seq=10
+SNAPSHOT_SEND server_ts=1762432982.500135 snapshot_id=5 seq=10
+SNAPSHOT_SEND server_ts=1762432982.551037 snapshot_id=6 seq=11
+SNAPSHOT_SEND server_ts=1762432982.5510595 snapshot_id=6 seq=11
+SNAPSHOT_SEND server_ts=1762432982.6019146 snapshot_id=7 seq=12
+SNAPSHOT_SEND server_ts=1762432982.601931 snapshot_id=7 seq=12
+SNAPSHOT_SEND server_ts=1762432982.653604 snapshot_id=8 seq=13
+SNAPSHOT_SEND server_ts=1762432982.6536179 snapshot_id=8 seq=13
+SNAPSHOT_SEND server_ts=1762432982.7042058 snapshot_id=9 seq=14
+SNAPSHOT_SEND server_ts=1762432982.7042227 snapshot_id=9 seq=14
+SNAPSHOT_SEND server_ts=1762432982.7545526 snapshot_id=10 seq=15
+SNAPSHOT_SEND server_ts=1762432982.7545688 snapshot_id=10 seq=15
+SNAPSHOT_SEND server_ts=1762432982.8053644 snapshot_id=11 seq=16
+SNAPSHOT_SEND server_ts=1762432982.8053803 snapshot_id=11 seq=16
+SNAPSHOT_SEND server_ts=1762432982.8560061 snapshot_id=12 seq=17
+SNAPSHOT_SEND server_ts=1762432982.8560205 snapshot_id=12 seq=17
+SNAPSHOT_SEND server_ts=1762432982.907933 snapshot_id=13 seq=18
+SNAPSHOT_SEND server_ts=1762432982.9079444 snapshot_id=13 seq=18
+SNAPSHOT_SEND server_ts=1762432982.9591098 snapshot_id=14 seq=19
+SNAPSHOT_SEND server_ts=1762432982.9591255 snapshot_id=14 seq=19
+SNAPSHOT_SEND server_ts=1762432983.0111377 snapshot_id=15 seq=20
+SNAPSHOT_SEND server_ts=1762432983.0111523 snapshot_id=15 seq=20
+SNAPSHOT_SEND server_ts=1762432983.0620558 snapshot_id=16 seq=21
+SNAPSHOT_SEND server_ts=1762432983.0620725 snapshot_id=16 seq=21
+SNAPSHOT_SEND server_ts=1762432983.1132848 snapshot_id=17 seq=22
+SNAPSHOT_SEND server_ts=1762432983.1133063 snapshot_id=17 seq=22
+SNAPSHOT_SEND server_ts=1762432983.1652112 snapshot_id=18 seq=23
+SNAPSHOT_SEND server_ts=1762432983.1652272 snapshot_id=18 seq=23
+SNAPSHOT_SEND server_ts=1762432983.2162695 snapshot_id=19 seq=24
+SNAPSHOT_SEND server_ts=1762432983.2162848 snapshot_id=19 seq=24
+SNAPSHOT_SEND server_ts=1762432983.2666945 snapshot_id=20 seq=25
+SNAPSHOT_SEND server_ts=1762432983.2667074 snapshot_id=20 seq=25
+SNAPSHOT_SEND server_ts=1762432983.3181555 snapshot_id=21 seq=26
+SNAPSHOT_SEND server_ts=1762432983.3181684 snapshot_id=21 seq=26
+SNAPSHOT_SEND server_ts=1762432983.3701377 snapshot_id=22 seq=27
+SNAPSHOT_SEND server_ts=1762432983.3701534 snapshot_id=22 seq=27
+SNAPSHOT_SEND server_ts=1762432983.4210608 snapshot_id=23 seq=28
+SNAPSHOT_SEND server_ts=1762432983.4210753 snapshot_id=23 seq=28
+SNAPSHOT_SEND server_ts=1762432983.472354 snapshot_id=24 seq=29
+SNAPSHOT_SEND server_ts=1762432983.47237 snapshot_id=24 seq=29
+SNAPSHOT_SEND server_ts=1762432983.5226407 snapshot_id=25 seq=30
+SNAPSHOT_SEND server_ts=1762432983.5226562 snapshot_id=25 seq=30
+SNAPSHOT_SEND server_ts=1762432983.5739105 snapshot_id=26 seq=31
+SNAPSHOT_SEND server_ts=1762432983.573926 snapshot_id=26 seq=31
+SNAPSHOT_SEND server_ts=1762432983.6254208 snapshot_id=27 seq=32
+SNAPSHOT_SEND server_ts=1762432983.6254368 snapshot_id=27 seq=32
+SNAPSHOT_SEND server_ts=1762432983.676667 snapshot_id=28 seq=33
+SNAPSHOT_SEND server_ts=1762432983.676683 snapshot_id=28 seq=33
+SNAPSHOT_SEND server_ts=1762432983.7275488 snapshot_id=29 seq=34
+SNAPSHOT_SEND server_ts=1762432983.7275643 snapshot_id=29 seq=34
+SNAPSHOT_SEND server_ts=1762432983.777988 snapshot_id=30 seq=35
+SNAPSHOT_SEND server_ts=1762432983.7780023 snapshot_id=30 seq=35
+SNAPSHOT_SEND server_ts=1762432983.8286731 snapshot_id=31 seq=36
+SNAPSHOT_SEND server_ts=1762432983.8286853 snapshot_id=31 seq=36
+SNAPSHOT_SEND server_ts=1762432983.8793755 snapshot_id=32 seq=37
+SNAPSHOT_SEND server_ts=1762432983.8793912 snapshot_id=32 seq=37
+SNAPSHOT_SEND server_ts=1762432983.931357 snapshot_id=33 seq=38
+SNAPSHOT_SEND server_ts=1762432983.9313731 snapshot_id=33 seq=38
+SNAPSHOT_SEND server_ts=1762432983.9823332 snapshot_id=34 seq=39
+SNAPSHOT_SEND server_ts=1762432983.9823537 snapshot_id=34 seq=39
+SNAPSHOT_SEND server_ts=1762432984.0324137 snapshot_id=35 seq=40
+SNAPSHOT_SEND server_ts=1762432984.03243 snapshot_id=35 seq=40
+SNAPSHOT_SEND server_ts=1762432984.0834532 snapshot_id=36 seq=41
+SNAPSHOT_SEND server_ts=1762432984.083469 snapshot_id=36 seq=41
+SNAPSHOT_SEND server_ts=1762432984.134539 snapshot_id=37 seq=42
+SNAPSHOT_SEND server_ts=1762432984.1345537 snapshot_id=37 seq=42
+SNAPSHOT_SEND server_ts=1762432984.1854107 snapshot_id=38 seq=43
+SNAPSHOT_SEND server_ts=1762432984.1854239 snapshot_id=38 seq=43
+SNAPSHOT_SEND server_ts=1762432984.2366462 snapshot_id=39 seq=44
+SNAPSHOT_SEND server_ts=1762432984.236661 snapshot_id=39 seq=44
+SNAPSHOT_SEND server_ts=1762432984.2867246 snapshot_id=40 seq=45
+SNAPSHOT_SEND server_ts=1762432984.2867424 snapshot_id=40 seq=45
+SNAPSHOT_SEND server_ts=1762432984.3380735 snapshot_id=41 seq=46
+SNAPSHOT_SEND server_ts=1762432984.3380907 snapshot_id=41 seq=46
+SNAPSHOT_SEND server_ts=1762432984.389038 snapshot_id=42 seq=47
+SNAPSHOT_SEND server_ts=1762432984.3890557 snapshot_id=42 seq=47
+SNAPSHOT_SEND server_ts=1762432984.4409802 snapshot_id=43 seq=48
+SNAPSHOT_SEND server_ts=1762432984.440996 snapshot_id=43 seq=48
+SNAPSHOT_SEND server_ts=1762432984.4918823 snapshot_id=44 seq=49
+SNAPSHOT_SEND server_ts=1762432984.4918978 snapshot_id=44 seq=49
+SNAPSHOT_SEND server_ts=1762432984.5438464 snapshot_id=45 seq=50
+SNAPSHOT_SEND server_ts=1762432984.543863 snapshot_id=45 seq=50
+SNAPSHOT_SEND server_ts=1762432984.5947309 snapshot_id=46 seq=51
+SNAPSHOT_SEND server_ts=1762432984.5947435 snapshot_id=46 seq=51
+SNAPSHOT_SEND server_ts=1762432984.6456995 snapshot_id=47 seq=52
+SNAPSHOT_SEND server_ts=1762432984.6457129 snapshot_id=47 seq=52
+SNAPSHOT_SEND server_ts=1762432984.6976993 snapshot_id=48 seq=53
+SNAPSHOT_SEND server_ts=1762432984.6977143 snapshot_id=48 seq=53
+SNAPSHOT_SEND server_ts=1762432984.7486985 snapshot_id=49 seq=54
+SNAPSHOT_SEND server_ts=1762432984.748713 snapshot_id=49 seq=54
+SNAPSHOT_SEND server_ts=1762432984.7988904 snapshot_id=50 seq=55
+SNAPSHOT_SEND server_ts=1762432984.7989054 snapshot_id=50 seq=55
+SNAPSHOT_SEND server_ts=1762432984.849889 snapshot_id=51 seq=56
+SNAPSHOT_SEND server_ts=1762432984.849908 snapshot_id=51 seq=56
+SNAPSHOT_SEND server_ts=1762432984.9002964 snapshot_id=52 seq=57
+SNAPSHOT_SEND server_ts=1762432984.900323 snapshot_id=52 seq=57
+SNAPSHOT_SEND server_ts=1762432984.951096 snapshot_id=53 seq=58
+SNAPSHOT_SEND server_ts=1762432984.9511104 snapshot_id=53 seq=58
+SNAPSHOT_SEND server_ts=1762432985.001465 snapshot_id=54 seq=59
+SNAPSHOT_SEND server_ts=1762432985.0014791 snapshot_id=54 seq=59
+SNAPSHOT_SEND server_ts=1762432985.0522282 snapshot_id=55 seq=60
+SNAPSHOT_SEND server_ts=1762432985.052256 snapshot_id=55 seq=60
+SNAPSHOT_SEND server_ts=1762432985.1031392 snapshot_id=56 seq=61
+SNAPSHOT_SEND server_ts=1762432985.1032043 snapshot_id=56 seq=61
+SNAPSHOT_SEND server_ts=1762432985.1550572 snapshot_id=57 seq=62
+SNAPSHOT_SEND server_ts=1762432985.1550717 snapshot_id=57 seq=62
+SNAPSHOT_SEND server_ts=1762432985.2058504 snapshot_id=58 seq=63
+SNAPSHOT_SEND server_ts=1762432985.2058656 snapshot_id=58 seq=63
+SNAPSHOT_SEND server_ts=1762432985.2559943 snapshot_id=59 seq=64
+SNAPSHOT_SEND server_ts=1762432985.2560103 snapshot_id=59 seq=64
+SNAPSHOT_SEND server_ts=1762432985.306732 snapshot_id=60 seq=65
+SNAPSHOT_SEND server_ts=1762432985.306748 snapshot_id=60 seq=65
+SNAPSHOT_SEND server_ts=1762432985.3575559 snapshot_id=61 seq=66
+SNAPSHOT_SEND server_ts=1762432985.3575714 snapshot_id=61 seq=66
+SNAPSHOT_SEND server_ts=1762432985.409524 snapshot_id=62 seq=67
+SNAPSHOT_SEND server_ts=1762432985.4095385 snapshot_id=62 seq=67
+SNAPSHOT_SEND server_ts=1762432985.4602118 snapshot_id=63 seq=68
+SNAPSHOT_SEND server_ts=1762432985.4602256 snapshot_id=63 seq=68
+SNAPSHOT_SEND server_ts=1762432985.510866 snapshot_id=64 seq=69
+SNAPSHOT_SEND server_ts=1762432985.5108798 snapshot_id=64 seq=69
+SNAPSHOT_SEND server_ts=1762432985.5615513 snapshot_id=65 seq=70
+SNAPSHOT_SEND server_ts=1762432985.561566 snapshot_id=65 seq=70
+SNAPSHOT_SEND server_ts=1762432985.6123362 snapshot_id=66 seq=71
+SNAPSHOT_SEND server_ts=1762432985.612353 snapshot_id=66 seq=71
+SNAPSHOT_SEND server_ts=1762432985.664371 snapshot_id=67 seq=72
+SNAPSHOT_SEND server_ts=1762432985.6643832 snapshot_id=67 seq=72
+SNAPSHOT_SEND server_ts=1762432985.7153785 snapshot_id=68 seq=73
+SNAPSHOT_SEND server_ts=1762432985.715403 snapshot_id=68 seq=73
+SNAPSHOT_SEND server_ts=1762432985.7659578 snapshot_id=69 seq=74
+SNAPSHOT_SEND server_ts=1762432985.7659743 snapshot_id=69 seq=74
+SNAPSHOT_SEND server_ts=1762432985.8170261 snapshot_id=70 seq=75
+SNAPSHOT_SEND server_ts=1762432985.8170424 snapshot_id=70 seq=75
+SNAPSHOT_SEND server_ts=1762432985.8676982 snapshot_id=71 seq=76
+SNAPSHOT_SEND server_ts=1762432985.8677135 snapshot_id=71 seq=76
+SNAPSHOT_SEND server_ts=1762432985.9197338 snapshot_id=72 seq=77
+SNAPSHOT_SEND server_ts=1762432985.9197521 snapshot_id=72 seq=77
+SNAPSHOT_SEND server_ts=1762432985.9708905 snapshot_id=73 seq=78
+SNAPSHOT_SEND server_ts=1762432985.970906 snapshot_id=73 seq=78
+SNAPSHOT_SEND server_ts=1762432986.0228887 snapshot_id=74 seq=79
+SNAPSHOT_SEND server_ts=1762432986.0229042 snapshot_id=74 seq=79
+SNAPSHOT_SEND server_ts=1762432986.073695 snapshot_id=75 seq=80
+SNAPSHOT_SEND server_ts=1762432986.0737107 snapshot_id=75 seq=80
+SNAPSHOT_SEND server_ts=1762432986.124533 snapshot_id=76 seq=81
+SNAPSHOT_SEND server_ts=1762432986.1245453 snapshot_id=76 seq=81
+SNAPSHOT_SEND server_ts=1762432986.176548 snapshot_id=77 seq=82
+SNAPSHOT_SEND server_ts=1762432986.1765606 snapshot_id=77 seq=82
+SNAPSHOT_SEND server_ts=1762432986.227417 snapshot_id=78 seq=83
+SNAPSHOT_SEND server_ts=1762432986.2274303 snapshot_id=78 seq=83
+SNAPSHOT_SEND server_ts=1762432986.2782872 snapshot_id=79 seq=84
+SNAPSHOT_SEND server_ts=1762432986.2783005 snapshot_id=79 seq=84
+SNAPSHOT_SEND server_ts=1762432986.3293653 snapshot_id=80 seq=85
+SNAPSHOT_SEND server_ts=1762432986.3293817 snapshot_id=80 seq=85
+SNAPSHOT_SEND server_ts=1762432986.3802705 snapshot_id=81 seq=86
+SNAPSHOT_SEND server_ts=1762432986.3802962 snapshot_id=81 seq=86
+SNAPSHOT_SEND server_ts=1762432986.4305463 snapshot_id=82 seq=87
+SNAPSHOT_SEND server_ts=1762432986.4305613 snapshot_id=82 seq=87
+SNAPSHOT_SEND server_ts=1762432986.4813602 snapshot_id=83 seq=88
+SNAPSHOT_SEND server_ts=1762432986.481374 snapshot_id=83 seq=88
+SNAPSHOT_SEND server_ts=1762432986.5334232 snapshot_id=84 seq=89
+SNAPSHOT_SEND server_ts=1762432986.5334387 snapshot_id=84 seq=89
+SNAPSHOT_SEND server_ts=1762432986.5842369 snapshot_id=85 seq=90
+SNAPSHOT_SEND server_ts=1762432986.5842612 snapshot_id=85 seq=90
+SNAPSHOT_SEND server_ts=1762432986.6358807 snapshot_id=86 seq=91
+SNAPSHOT_SEND server_ts=1762432986.635894 snapshot_id=86 seq=91
+SNAPSHOT_SEND server_ts=1762432986.6880963 snapshot_id=87 seq=92
+SNAPSHOT_SEND server_ts=1762432986.688115 snapshot_id=87 seq=92
+SNAPSHOT_SEND server_ts=1762432986.739591 snapshot_id=88 seq=93
+SNAPSHOT_SEND server_ts=1762432986.7396069 snapshot_id=88 seq=93
+SNAPSHOT_SEND server_ts=1762432986.791081 snapshot_id=89 seq=94
+SNAPSHOT_SEND server_ts=1762432986.791096 snapshot_id=89 seq=94
+SNAPSHOT_SEND server_ts=1762432986.8427403 snapshot_id=90 seq=95
+SNAPSHOT_SEND server_ts=1762432986.8427546 snapshot_id=90 seq=95
+SNAPSHOT_SEND server_ts=1762432986.8936906 snapshot_id=91 seq=96
+SNAPSHOT_SEND server_ts=1762432986.893704 snapshot_id=91 seq=96
+SNAPSHOT_SEND server_ts=1762432986.9439082 snapshot_id=92 seq=97
+SNAPSHOT_SEND server_ts=1762432986.9439306 snapshot_id=92 seq=97
+SNAPSHOT_SEND server_ts=1762432986.994819 snapshot_id=93 seq=98
+SNAPSHOT_SEND server_ts=1762432986.9948356 snapshot_id=93 seq=98
+SNAPSHOT_SEND server_ts=1762432987.0448298 snapshot_id=94 seq=99
+SNAPSHOT_SEND server_ts=1762432987.0448444 snapshot_id=94 seq=99
+SNAPSHOT_SEND server_ts=1762432987.095883 snapshot_id=95 seq=100
+SNAPSHOT_SEND server_ts=1762432987.0958977 snapshot_id=95 seq=100
+SNAPSHOT_SEND server_ts=1762432987.1469183 snapshot_id=96 seq=101
+SNAPSHOT_SEND server_ts=1762432987.1469383 snapshot_id=96 seq=101
+SNAPSHOT_SEND server_ts=1762432987.1979918 snapshot_id=97 seq=102
+SNAPSHOT_SEND server_ts=1762432987.1980102 snapshot_id=97 seq=102
+SNAPSHOT_SEND server_ts=1762432987.2492774 snapshot_id=98 seq=103
+SNAPSHOT_SEND server_ts=1762432987.249293 snapshot_id=98 seq=103
+SNAPSHOT_SEND server_ts=1762432987.3013656 snapshot_id=99 seq=104
+SNAPSHOT_SEND server_ts=1762432987.3013813 snapshot_id=99 seq=104
+SNAPSHOT_SEND server_ts=1762432987.3525906 snapshot_id=100 seq=105
+SNAPSHOT_SEND server_ts=1762432987.3526046 snapshot_id=100 seq=105
+SNAPSHOT_SEND server_ts=1762432987.4033697 snapshot_id=101 seq=106
+SNAPSHOT_SEND server_ts=1762432987.4033828 snapshot_id=101 seq=106
+SNAPSHOT_SEND server_ts=1762432987.4534364 snapshot_id=102 seq=107
+SNAPSHOT_SEND server_ts=1762432987.453454 snapshot_id=102 seq=107
+SNAPSHOT_SEND server_ts=1762432987.5043352 snapshot_id=103 seq=108
+SNAPSHOT_SEND server_ts=1762432987.5043576 snapshot_id=103 seq=108
+SNAPSHOT_SEND server_ts=1762432987.554373 snapshot_id=104 seq=109
+SNAPSHOT_SEND server_ts=1762432987.5543902 snapshot_id=104 seq=109
+SNAPSHOT_SEND server_ts=1762432987.605608 snapshot_id=105 seq=110
+SNAPSHOT_SEND server_ts=1762432987.605626 snapshot_id=105 seq=110
+SNAPSHOT_SEND server_ts=1762432987.655773 snapshot_id=106 seq=111
+SNAPSHOT_SEND server_ts=1762432987.655789 snapshot_id=106 seq=111
+SNAPSHOT_SEND server_ts=1762432987.7071447 snapshot_id=107 seq=112
+SNAPSHOT_SEND server_ts=1762432987.7071621 snapshot_id=107 seq=112
+SNAPSHOT_SEND server_ts=1762432987.7581353 snapshot_id=108 seq=113
+SNAPSHOT_SEND server_ts=1762432987.7581522 snapshot_id=108 seq=113
+SNAPSHOT_SEND server_ts=1762432987.8090165 snapshot_id=109 seq=114
+SNAPSHOT_SEND server_ts=1762432987.809032 snapshot_id=109 seq=114
+SNAPSHOT_SEND server_ts=1762432987.8597612 snapshot_id=110 seq=115
+SNAPSHOT_SEND server_ts=1762432987.8597765 snapshot_id=110 seq=115
+SNAPSHOT_SEND server_ts=1762432987.9105947 snapshot_id=111 seq=116
+SNAPSHOT_SEND server_ts=1762432987.9106095 snapshot_id=111 seq=116
+SNAPSHOT_SEND server_ts=1762432987.9613981 snapshot_id=112 seq=117
+SNAPSHOT_SEND server_ts=1762432987.9614303 snapshot_id=112 seq=117
+SNAPSHOT_SEND server_ts=1762432988.0117154 snapshot_id=113 seq=118
+SNAPSHOT_SEND server_ts=1762432988.011729 snapshot_id=113 seq=118
+SNAPSHOT_SEND server_ts=1762432988.062408 snapshot_id=114 seq=119
+SNAPSHOT_SEND server_ts=1762432988.0624244 snapshot_id=114 seq=119
+SNAPSHOT_SEND server_ts=1762432988.1132982 snapshot_id=115 seq=120
+SNAPSHOT_SEND server_ts=1762432988.1133149 snapshot_id=115 seq=120
+SNAPSHOT_SEND server_ts=1762432988.163385 snapshot_id=116 seq=121
+SNAPSHOT_SEND server_ts=1762432988.1634002 snapshot_id=116 seq=121
+SNAPSHOT_SEND server_ts=1762432988.2142591 snapshot_id=117 seq=122
+SNAPSHOT_SEND server_ts=1762432988.214276 snapshot_id=117 seq=122
+SNAPSHOT_SEND server_ts=1762432988.2663891 snapshot_id=118 seq=123
+SNAPSHOT_SEND server_ts=1762432988.2664046 snapshot_id=118 seq=123
+SNAPSHOT_SEND server_ts=1762432988.3187096 snapshot_id=119 seq=124
+SNAPSHOT_SEND server_ts=1762432988.3200715 snapshot_id=119 seq=124
+SNAPSHOT_SEND server_ts=1762432988.3724904 snapshot_id=120 seq=125
+SNAPSHOT_SEND server_ts=1762432988.3725157 snapshot_id=120 seq=125
+SNAPSHOT_SEND server_ts=1762432988.4225287 snapshot_id=121 seq=126
+SNAPSHOT_SEND server_ts=1762432988.4225423 snapshot_id=121 seq=126
+SNAPSHOT_SEND server_ts=1762432988.4742525 snapshot_id=122 seq=127
+SNAPSHOT_SEND server_ts=1762432988.4742677 snapshot_id=122 seq=127
+SNAPSHOT_SEND server_ts=1762432988.5256727 snapshot_id=123 seq=128
+SNAPSHOT_SEND server_ts=1762432988.5256886 snapshot_id=123 seq=128
+SNAPSHOT_SEND server_ts=1762432988.5765393 snapshot_id=124 seq=129
+SNAPSHOT_SEND server_ts=1762432988.5765572 snapshot_id=124 seq=129
+SNAPSHOT_SEND server_ts=1762432988.6274161 snapshot_id=125 seq=130
+SNAPSHOT_SEND server_ts=1762432988.6274335 snapshot_id=125 seq=130
+SNAPSHOT_SEND server_ts=1762432988.6774302 snapshot_id=126 seq=131
+SNAPSHOT_SEND server_ts=1762432988.6774428 snapshot_id=126 seq=131
+SNAPSHOT_SEND server_ts=1762432988.7281868 snapshot_id=127 seq=132
+SNAPSHOT_SEND server_ts=1762432988.7282033 snapshot_id=127 seq=132
+SNAPSHOT_SEND server_ts=1762432988.7783248 snapshot_id=128 seq=133
+SNAPSHOT_SEND server_ts=1762432988.7783406 snapshot_id=128 seq=133
+SNAPSHOT_SEND server_ts=1762432988.8292556 snapshot_id=129 seq=134
+SNAPSHOT_SEND server_ts=1762432988.829273 snapshot_id=129 seq=134
+SNAPSHOT_SEND server_ts=1762432988.880009 snapshot_id=130 seq=135
+SNAPSHOT_SEND server_ts=1762432988.880024 snapshot_id=130 seq=135
+SNAPSHOT_SEND server_ts=1762432988.9318926 snapshot_id=131 seq=136
+SNAPSHOT_SEND server_ts=1762432988.931911 snapshot_id=131 seq=136
+SNAPSHOT_SEND server_ts=1762432988.9829094 snapshot_id=132 seq=137
+SNAPSHOT_SEND server_ts=1762432988.9829302 snapshot_id=132 seq=137
+SNAPSHOT_SEND server_ts=1762432989.0331492 snapshot_id=133 seq=138
+SNAPSHOT_SEND server_ts=1762432989.033167 snapshot_id=133 seq=138
+SNAPSHOT_SEND server_ts=1762432989.0840733 snapshot_id=134 seq=139
+SNAPSHOT_SEND server_ts=1762432989.0840864 snapshot_id=134 seq=139
+SNAPSHOT_SEND server_ts=1762432989.1350987 snapshot_id=135 seq=140
+SNAPSHOT_SEND server_ts=1762432989.135114 snapshot_id=135 seq=140
+SNAPSHOT_SEND server_ts=1762432989.1871505 snapshot_id=136 seq=141
+SNAPSHOT_SEND server_ts=1762432989.1871688 snapshot_id=136 seq=141
+SNAPSHOT_SEND server_ts=1762432989.2381902 snapshot_id=137 seq=142
+SNAPSHOT_SEND server_ts=1762432989.238209 snapshot_id=137 seq=142
+SNAPSHOT_SEND server_ts=1762432989.288408 snapshot_id=138 seq=143
+SNAPSHOT_SEND server_ts=1762432989.2884264 snapshot_id=138 seq=143
+SNAPSHOT_SEND server_ts=1762432989.339191 snapshot_id=139 seq=144
+SNAPSHOT_SEND server_ts=1762432989.3392086 snapshot_id=139 seq=144
+SNAPSHOT_SEND server_ts=1762432989.3901632 snapshot_id=140 seq=145
+SNAPSHOT_SEND server_ts=1762432989.3901966 snapshot_id=140 seq=145
+SNAPSHOT_SEND server_ts=1762432989.442183 snapshot_id=141 seq=146
+SNAPSHOT_SEND server_ts=1762432989.4421985 snapshot_id=141 seq=146
+SNAPSHOT_SEND server_ts=1762432989.4932666 snapshot_id=142 seq=147
+SNAPSHOT_SEND server_ts=1762432989.493282 snapshot_id=142 seq=147
+SNAPSHOT_SEND server_ts=1762432989.54345 snapshot_id=143 seq=148
+SNAPSHOT_SEND server_ts=1762432989.5434706 snapshot_id=143 seq=148
+SNAPSHOT_SEND server_ts=1762432989.594363 snapshot_id=144 seq=149
+SNAPSHOT_SEND server_ts=1762432989.5943794 snapshot_id=144 seq=149
+SNAPSHOT_SEND server_ts=1762432989.6450799 snapshot_id=145 seq=150
+SNAPSHOT_SEND server_ts=1762432989.645094 snapshot_id=145 seq=150
+SNAPSHOT_SEND server_ts=1762432989.697067 snapshot_id=146 seq=151
+SNAPSHOT_SEND server_ts=1762432989.697082 snapshot_id=146 seq=151
+SNAPSHOT_SEND server_ts=1762432989.7477765 snapshot_id=147 seq=152
+SNAPSHOT_SEND server_ts=1762432989.747791 snapshot_id=147 seq=152
+SNAPSHOT_SEND server_ts=1762432989.7980468 snapshot_id=148 seq=153
+SNAPSHOT_SEND server_ts=1762432989.7980688 snapshot_id=148 seq=153
+SNAPSHOT_SEND server_ts=1762432989.8480566 snapshot_id=149 seq=154
+SNAPSHOT_SEND server_ts=1762432989.8480744 snapshot_id=149 seq=154
+SNAPSHOT_SEND server_ts=1762432989.8990593 snapshot_id=150 seq=155
+SNAPSHOT_SEND server_ts=1762432989.8990748 snapshot_id=150 seq=155
+SNAPSHOT_SEND server_ts=1762432989.9494581 snapshot_id=151 seq=156
+SNAPSHOT_SEND server_ts=1762432989.9494739 snapshot_id=151 seq=156
+Player 7121216a acquired cell (5, 7)
+Traceback (most recent call last):
+  File "/home/awail/PycharmProjects/PythonProject1/server.py", line 382, in <module>
+    server.run()
+    ~~~~~~~~~~^^
+  File "/home/awail/PycharmProjects/PythonProject1/server.py", line 65, in run
+    self.run_one_frame()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/awail/PycharmProjects/PythonProject1/server.py", line 82, in run_one_frame
+    self.update_game_loop()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/awail/PycharmProjects/PythonProject1/server.py", line 239, in update_game_loop
+    self.broadcast_snapshots()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/awail/PycharmProjects/PythonProject1/server.py", line 266, in broadcast_snapshots
+    delta_changes = [(int(y), int(x), int(new_arr[y, x])) for y, x in diff_indices]
+                                      ~~~^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: np.str_('7121216a')
