@@ -268,7 +268,7 @@ class GameServer:
         if delta_changes:
             delta_entry = {
                 "snapshot_id": server_snapshot_id,
-                "changes": delta_changes,
+                "delta": delta_changes,
             }
             self.last_snapshot_deltas.append(delta_entry)
             # Keep only the last ~3 deltas
