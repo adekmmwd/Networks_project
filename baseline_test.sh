@@ -9,7 +9,7 @@ set -e
 SERVER_LOG="server_log.txt"
 CLIENT_LOG_PREFIX="client"
 METRICS_CSV="metrics.csv"
-RUN_DURATION=15   # seconds
+RUN_DURATION=120   # seconds
 
 echo "=== Starting Phase-1 Baseline Local Test ==="
 rm -f ${SERVER_LOG} ${CLIENT_LOG_PREFIX}_*.txt ${METRICS_CSV} *.png

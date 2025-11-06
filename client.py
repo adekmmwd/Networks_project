@@ -171,9 +171,12 @@ class ClientFSM:
             print("Waiting for full snapshot...")
             self.last_send_time = now
 
+    import random
+
     def handle_game_loop(self):
         buffer = deque()
 
+        # Step 1: drain all available packets into buffer
         while True:
             try:
                 header, payload = self.recv_packet(block=False)
@@ -184,56 +187,52 @@ class ClientFSM:
             except Exception:
                 break
 
-        if not buffer:
-            pass
-
+        # Step 2: process all received packets
         while buffer:
             header, payload = buffer.popleft()
             now = time.time()
             msg_type = header["msg_type"]
             snapshot_id = header["snapshot_id"]
 
+            # ---- Ignore outdated or duplicate snapshots ----
             if msg_type in (MSG_SNAPSHOT_FULL, MSG_SNAPSHOT_DELTA):
                 if snapshot_id <= self.last_snapshot_id:
                     print(f"⚠️ Ignored outdated snapshot #{snapshot_id} (last={self.last_snapshot_id})")
                     continue
 
+            # ---- Handle Full Snapshot ----
             if msg_type == MSG_SNAPSHOT_FULL:
                 state = json.loads(payload.decode())
                 self.apply_full_snapshot(state)
                 print(f"✓ Applied full snapshot #{snapshot_id}")
-                # This log is for the test script
+
+                # Logging for the metrics collection script
                 print(
-                    f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']}")
+                    f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']}"
+                )
                 self.last_snapshot_id = snapshot_id
                 self.last_ack_time = now
                 self.pending_acquire = None
                 self.send_packet(MSG_SNAPSHOT_ACK, snapshot_id=snapshot_id)
 
+            # ---- Handle Delta Snapshot ----
             elif msg_type == MSG_SNAPSHOT_DELTA:
                 delta = json.loads(payload.decode())
                 self.apply_delta_snapshot(delta)
                 print(f"✓ Applied delta snapshot #{snapshot_id}")
-                # This log is for the test script
+
+                # Logging for the metrics collection script
                 print(
-                    f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']}")
+                    f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']}"
+                )
                 self.last_snapshot_id = snapshot_id
                 self.last_ack_time = now
                 self.pending_acquire = None
                 self.send_packet(MSG_SNAPSHOT_ACK, snapshot_id=snapshot_id)
 
-            # FIX 4: Listen for MSG_LEADERBOARD, not MSG_END_GAME
+            # ---- Handle Game Over / Leaderboard ----
             elif msg_type == MSG_LEADERBOARD:
                 print("🏁 Game Over message received (Leaderboard)")
-                # You could optionally parse and print the leaderboard here
-                # try:
-                #     leaderboard_data = json.loads(payload.decode())
-                #     print("--- FINAL LEADERBOARD ---")
-                #     for entry in leaderboard_data.get("results", []):
-                #         print(f"Rank {entry['rank']}: Player {entry['player_id']} (Score: {entry['score']})")
-                # except Exception as e:
-                #     print(f"Could not parse leaderboard: {e}")
-
                 self.transition(ClientState.GAME_OVER)
                 return
 
@@ -241,25 +240,24 @@ class ClientFSM:
                 print(f"⚠️ Unrecognized message type {msg_type}")
                 continue
 
+        # ================================================================
+        # Step 3: handle acquire event (player action) — RANDOM timing
+        # ================================================================
         now = time.time()
-        # This is the test-stub logic for sending an acquire event
-        if int(now) % 10 == 0 and not self.pending_acquire:
-            x= random.randint(0, 19)
-            y= random.randint(0, 19)
 
-            # This is already correct: {"x": ..., "y": ...}
-            payload_dictionary = {"x": x, "y": y}
-            payload = json.dumps(payload_dictionary).encode()
+        # Randomized acquire timing: only send occasionally
+        # (roughly once every 3–8 seconds)
+        if not self.pending_acquire:
+            if random.random() < (TICK / random.uniform(3, 8)):
+                x = random.randint(0, 19)
+                y = random.randint(0, 19)
+                payload_dictionary = {"x": x, "y": y}
+                payload = json.dumps(payload_dictionary).encode()
 
-            self.send_packet(MSG_ACQUIRE_EVENT, payload=payload)
-            print(f"📦 Sent ACQUIRE event ({x},{y})")
-            self.pending_acquire = payload
-            self.last_acquire_time = now
-
-        elif self.pending_acquire and now - self.last_acquire_time >= ACQUIRE_RESEND:
-            # Resend the pending acquire event
-            self.send_packet(MSG_ACQUIRE_EVENT, payload=self.pending_acquire)
-            self.last_acquire_time = now
+                self.send_packet(MSG_ACQUIRE_EVENT, payload=payload)
+                print(f"📦 Sent ACQUIRE event ({x},{y})")
+                self.pending_acquire = payload
+                self.last_acquire_time = now
 
     def handle_game_over(self):
         print("🏁 Game Over! Finalizing session...")
