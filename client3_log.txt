@@ -1,0 +1,41 @@
+Client started.
+Initial state: WAIT_FOR_JOIN
+client: starting...
+client: state: WAIT_FOR_JOIN
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+Sent JOIN_REQ
+✓ JOIN_ACK received. Server assigned me ID: 9e01dcee
+ Transition: WAIT_FOR_JOIN → WAIT_FOR_READY
+→ Sent READY_REQ
+✓ READY_ACK received. Waiting for start snapshot.
+ Transition: WAIT_FOR_READY → WAIT_FOR_STARTGAME
+Waiting for full snapshot...
+✓ Received full snapshot #0
+[FULL] Applied full snapshot #0
+ Transition: WAIT_FOR_STARTGAME → IN_GAME_LOOP
+📦 Sent ACQUIRE event (5,7)
+🏁 Game Over message received (Leaderboard)
+ Transition: IN_GAME_LOOP → GAME_OVER
+🏁 Game Over! Finalizing session...
+✔️ Sent game over acknowledgment to server.
+🔒 Client session ended.

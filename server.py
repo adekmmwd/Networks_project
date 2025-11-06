@@ -3,6 +3,7 @@ from socket import *
 import dataclasses
 import enum
 import time
+import uuid
 import json
 import numpy as np
 from header import *
@@ -10,7 +11,7 @@ from header import *
 
 @dataclasses.dataclass
 class Player:
-    id: int
+    id: str
     address: tuple
     ready: bool = False
     last_update_time: float = 0
@@ -141,7 +142,7 @@ class GameServer:
             self.server_socket.sendto(ack_packet, addr)
             return
 
-        new_id = len(self.players) + 1
+        new_id = str(uuid.uuid4())[:8]
         player = Player(id=new_id, address=addr)
         self.players[addr] = player
         print(f"Player {new_id} joined from {addr}")

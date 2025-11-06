@@ -1,49 +1,140 @@
 #!/usr/bin/env python3
 """
-plot_metrics.py — Phase 1 baseline plotting
+collect_metrics.py — Phase 1 baseline metric extraction + performance metrics
+
 Usage:
-    python3 plot_metrics.py metrics.csv
+    python3 collect_metrics.py server_log.txt client1_log.txt client2_log.txt ...
 Outputs:
-    latency_timeseries.png
-    jitter_hist.png
+    metrics.csv  (per-snapshot latency/jitter)
+    collect_metrics_summary.txt  (summary for plotting)
 """
 
-import sys, csv, matplotlib.pyplot as plt
+import sys, re, csv, statistics, time, threading, psutil
+import pandas as pd
 
-if len(sys.argv) < 2:
-    print("Usage: python3 plot_metrics.py metrics.csv")
+if len(sys.argv) < 3:
+    print("Usage: python3 collect_metrics.py server_log.txt client1_log.txt ...")
     sys.exit(1)
 
-csv_file = sys.argv[1]
-lat, jit = [], []
+server_log = sys.argv[1]
+client_logs = sys.argv[2:]
+rows = []
 
-with open(csv_file) as f:
-    r = csv.DictReader(f)
-    for row in r:
-        lat.append(float(row["latency_ms"]))
-        jit.append(float(row["jitter_ms"]))
+pattern = re.compile(
+    r"SNAPSHOT.*recv_time=(?P<recv>\d+\.\d+)\s+server_ts=(?P<srv>\d+\.\d+)\s+snapshot_id=(?P<snap>\d+)\s+seq=(?P<seq>\d+)"
+)
 
-if not lat:
-    print("[plot_metrics] No data to plot.")
+# ---------------------------
+# CPU monitoring thread
+# ---------------------------
+cpu_samples = []
+stop_flag = threading.Event()
+
+def monitor_cpu():
+    while not stop_flag.is_set():
+        cpu_samples.append(psutil.cpu_percent(interval=0.5))
+
+t = threading.Thread(target=monitor_cpu, daemon=True)
+t.start()
+
+# ---------------------------
+# Parse client logs
+# ---------------------------
+for cfile in client_logs:
+    cid_match = re.search(r"client(\d+)_log", cfile)
+    cid = int(cid_match.group(1)) if cid_match else 0
+    last_latency = None
+    with open(cfile) as f:
+        for line in f:
+            m = pattern.search(line)
+            if m:
+                recv = float(m.group("recv"))
+                srv = float(m.group("srv"))
+                latency = (recv - srv) * 1000.0
+                jitter = abs(latency - last_latency) if last_latency else 0.0
+                last_latency = latency
+                rows.append({
+                    "client_id": cid,
+                    "snapshot_id": int(m.group("snap")),
+                    "seq_num": int(m.group("seq")),
+                    "server_timestamp_ms": srv * 1000.0,
+                    "recv_time_ms": recv * 1000.0,
+                    "latency_ms": latency,
+                    "jitter_ms": jitter
+                })
+
+# ---------------------------
+# Stop CPU monitor
+# ---------------------------
+stop_flag.set()
+t.join()
+
+if not rows:
+    print("[collect_metrics] No valid snapshot lines found in logs.")
     sys.exit(0)
 
-# Latency time-series
-plt.figure(figsize=(8,4))
-plt.plot(lat, marker='.', linestyle='-', alpha=0.7)
-plt.title("Snapshot Latency (ms)")
-plt.xlabel("Sample Index")
-plt.ylabel("Latency (ms)")
-plt.grid(True)
-plt.tight_layout()
-plt.savefig("latency_timeseries.png")
-print("[plot_metrics] Saved latency_timeseries.png")
+# ---------------------------
+# Write metrics.csv
+# ---------------------------
+out_csv = "metrics.csv"
+with open(out_csv, "w", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+    writer.writeheader()
+    writer.writerows(rows)
 
-# Jitter histogram
-plt.figure(figsize=(6,4))
-plt.hist(jit, bins=40, alpha=0.8)
-plt.title("Jitter Distribution (ms)")
-plt.xlabel("Jitter (ms)")
-plt.ylabel("Count")
-plt.tight_layout()
-plt.savefig("jitter_hist.png")
-print("[plot_metrics] Saved jitter_hist.png")
+# ---------------------------
+# Compute statistics
+# ---------------------------
+lat = [r["latency_ms"] for r in rows]
+jit = [r["jitter_ms"] for r in rows]
+print(f"[collect_metrics] {len(rows)} samples → {out_csv}")
+print(f"Latency (ms): mean={statistics.mean(lat):.2f}, stdev={statistics.stdev(lat):.2f}")
+print(f"Jitter  (ms): mean={statistics.mean(jit):.2f}, stdev={statistics.stdev(jit):.2f}")
+
+# ---------------------------
+# Update rate per client
+# ---------------------------
+df = pd.DataFrame(rows)
+rates = []
+for cid, group in df.groupby("client_id"):
+    tmin = group["server_timestamp_ms"].min()
+    tmax = group["server_timestamp_ms"].max()
+    if tmax > tmin:
+        rate = len(group) / ((tmax - tmin) / 1000.0)
+        rates.append((cid, rate))
+
+if rates:
+    print("\n=== Update rate per client (snapshots/sec) ===")
+    for cid, rps in rates:
+        print(f"Client {cid}: {rps:.2f} updates/sec")
+    avg_rate = sum(r for _, r in rates) / len(rates)
+else:
+    avg_rate = 0.0
+
+# ---------------------------
+# Average CPU usage
+# ---------------------------
+avg_cpu = sum(cpu_samples) / len(cpu_samples) if cpu_samples else 0.0
+print(f"\nAverage update rate: {avg_rate:.2f} updates/sec/client")
+print(f"Average CPU usage:   {avg_cpu:.2f}%")
+
+# ---------------------------
+# Performance goal summary
+# ---------------------------
+if avg_rate >= 20 and statistics.mean(lat) <= 50 and avg_cpu < 60:
+    print("\n✅ Performance goal met: ≥20 updates/sec per client, latency ≤50 ms, CPU < 60%")
+else:
+    print("\n⚠ Performance goal not met.")
+    print(f"   Target: ≥20 updates/sec/client, latency ≤50 ms, CPU < 60%")
+
+# ---------------------------
+# Save summary for plotting
+# ---------------------------
+with open("collect_metrics_summary.txt", "w") as f:
+    f.write(f"Latency mean: {statistics.mean(lat):.2f} ms\n")
+    f.write(f"Jitter mean: {statistics.mean(jit):.2f} ms\n")
+    for cid, rps in rates:
+        f.write(f"Client {cid}: {rps:.2f} updates/sec\n")
+    f.write(f"Average CPU usage: {avg_cpu:.2f}\n")
+
+print("\n[collect_metrics] ✅ Saved summary to collect_metrics_summary.txt")
