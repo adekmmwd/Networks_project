@@ -147,7 +147,7 @@ class ClientFSM:
             self.last_send_time = now
 
         header, payload = self.recv_packet()
-        if header and header["msg_type"] == MSG_READY_ACK :
+        if header and header["msg_type"] == MSG_READY_ACK:
             print("✓ READY_ACK received. Waiting for start snapshot.")
             self.transition(ClientState.WAIT_FOR_STARTGAME)
 
@@ -233,6 +233,19 @@ class ClientFSM:
             # ---- Handle Game Over / Leaderboard ----
             elif msg_type == MSG_LEADERBOARD:
                 print("🏁 Game Over message received (Leaderboard)")
+
+                try:
+                    lb = json.loads(payload.decode())
+                    results = lb.get("results", [])
+                    print("🏆 Leaderboard:")
+                    for entry in results:
+                        rank = entry.get("rank")
+                        pid = entry.get("player_id")
+                        score = entry.get("score")
+                        print(f"  {rank}. player {pid} — score {score}")
+                except Exception as e:
+                    print(f"⚠️ Failed to parse leaderboard payload: {e}")
+
                 self.transition(ClientState.GAME_OVER)
                 return
 
@@ -264,6 +277,7 @@ class ClientFSM:
         # Server doesn't listen for this, but sending it is harmless.
         self.send_packet(MSG_END_GAME, payload=b"ACK")
         print("✔️ Sent game over acknowledgment to server.")
+        time.sleep(1)
         self.sock.close()
         self.running = False
         print("🔒 Client session ended.")

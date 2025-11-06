@@ -193,11 +193,11 @@ class GameServer:
         time_elapsed = time.time() - self.join_start_time
         
         # Condition 1: Time is up and we have at least 2 players
-        time_condition = (time_elapsed >= self.join_time_gap_allowed and len(self.players) > 1)
+        #time_condition = (time_elapsed >= self.join_time_gap_allowed and len(self.players) > 1)
         
         # Condition 2: Half the players are ready (and we have at least 1)
-        ready_condition = (len(self.players) > 2 and self.ready_count >= len(self.players) / 2)
-
+        ready_condition = (len(self.players) >= 4 and self.ready_count == 4)
+        time_condition = False  # Disable time condition for testing
         for address, player in self.players.items():
             if  not player.ready:
                 self.seq_num += 1
@@ -327,6 +327,7 @@ class GameServer:
 
 
     def run_state_game_over(self):
+        print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah kadshlkfasdfh",flush=True)
         """Calculate, send leaderboard, and reset the server."""
         print("\n--- GAME OVER ---")
 
