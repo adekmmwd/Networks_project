@@ -10,7 +10,8 @@ from header import (
     MSG_READY_REQ, MSG_READY_ACK,
     MSG_SNAPSHOT_FULL, MSG_SNAPSHOT_DELTA,
     MSG_SNAPSHOT_ACK, MSG_ACQUIRE_EVENT,
-    MSG_END_GAME
+    MSG_END_GAME,
+    MSG_LEADERBOARD  # <-- FIX 1: Import the correct game-over message
 )
 
 
@@ -31,7 +32,8 @@ START_TIMEOUT = 2.0
 
 class ClientHeaders:
     def __init__(self, color="red", position=(0, 0)):
-        self.id = str(uuid.uuid4())  # unique client id
+        # FIX 2: We will store the server-assigned ID here
+        self.my_id = None
         self.color = color
         self.position = position
         self.score = 0
@@ -52,6 +54,7 @@ class ClientFSM:
         self.state = ClientState.WAIT_FOR_JOIN
         self.grid = [[0 for _ in range(20)] for _ in range(20)]
         self.last_snapshot_id = 0
+        self.my_id = None  # <-- FIX 2: Store the server-assigned ID
 
         self.last_send_time = 0
         self.last_ack_time = 0
@@ -88,7 +91,7 @@ class ClientFSM:
             return None, None
 
     def run(self):
-        print(f"client: {self.headers.id} started")
+        print(f"client: starting...")
         print(f"client: state: {self.state.name}")
         while self.running:
             if self.state == ClientState.WAIT_FOR_JOIN:
@@ -102,31 +105,43 @@ class ClientFSM:
             elif self.state == ClientState.GAME_OVER:
                 self.handle_game_over()
 
-            time.sleep(TICK)
+            #time.sleep(TICK)
 
     def handle_join(self):
         now = time.time()
 
         if self.recent_transition or now - self.last_send_time >= JOIN_RESEND:
             self.recent_transition = 0
-            ip, port = self.sock.getsockname()
-            payload = f"{ip}|{port}".encode()
-            self.send_packet(MSG_JOIN_REQ, payload)
+            # FIX 3: Send an empty payload. Server ignores it.
+            self.send_packet(MSG_JOIN_REQ, payload=b"")
             print("Sent JOIN_REQ")
             self.last_send_time = now
 
         header, payload = self.recv_packet()
         if header and header["msg_type"] == MSG_JOIN_ACK:
-            print("✓ JOIN_ACK received. Moving to READY.")
-            self.transition(ClientState.WAIT_FOR_READY)
+            # FIX 2: Client MUST read the ID the server assigns
+            try:
+                payload_dict = json.loads(payload.decode())
+                self.my_id = payload_dict.get("player_id")
+                if self.my_id is None:
+                    print("ERROR: Server JOIN_ACK did not contain player_id")
+                    self.running = False
+                    return
+
+                self.headers.my_id = self.my_id  # Store it in the headers object
+                print(f"✓ JOIN_ACK received. Server assigned me ID: {self.my_id}")
+                self.transition(ClientState.WAIT_FOR_READY)
+            except Exception as e:
+                print(f"Error parsing JOIN_ACK: {e}")
+                self.running = False
 
     def handle_ready(self):
         now = time.time()
 
         if self.recent_transition or now - self.last_send_time >= READY_RESEND:
             self.recent_transition = 0
-            payload = f"{self.headers.id}".encode()
-            self.send_packet(MSG_READY_REQ, payload)
+            # FIX 3: Send an empty payload. Server ignores it.
+            self.send_packet(MSG_READY_REQ, payload=b"")
             print("→ Sent READY_REQ")
             self.last_send_time = now
 
@@ -144,13 +159,14 @@ class ClientFSM:
             self.last_snapshot_id = snap_id
             print(f"✓ Received full snapshot #{snap_id}")
             self.apply_full_snapshot(json.loads(payload.decode()))
+            # This is correct: sends snapshot_id in header, empty payload
             self.send_packet(MSG_SNAPSHOT_ACK, snapshot_id=snap_id)
             self.transition(ClientState.IN_GAME_LOOP)
 
         elif now - self.last_send_time >= START_TIMEOUT or self.recent_transition == 1:
             self.recent_transition = 0
-            payload = f"{self.headers.id}".encode()
-            self.send_packet(MSG_READY_REQ, payload)
+            # FIX 3: Send an empty payload.
+            self.send_packet(MSG_READY_REQ, payload=b"")
             print("Waiting for full snapshot...")
             self.last_send_time = now
 
@@ -185,6 +201,7 @@ class ClientFSM:
                 state = json.loads(payload.decode())
                 self.apply_full_snapshot(state)
                 print(f"✓ Applied full snapshot #{snapshot_id}")
+                # This log is for the test script
                 print(
                     f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']}")
                 self.last_snapshot_id = snapshot_id
@@ -196,6 +213,7 @@ class ClientFSM:
                 delta = json.loads(payload.decode())
                 self.apply_delta_snapshot(delta)
                 print(f"✓ Applied delta snapshot #{snapshot_id}")
+                # This log is for the test script
                 print(
                     f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']}")
                 self.last_snapshot_id = snapshot_id
@@ -203,8 +221,18 @@ class ClientFSM:
                 self.pending_acquire = None
                 self.send_packet(MSG_SNAPSHOT_ACK, snapshot_id=snapshot_id)
 
-            elif msg_type == MSG_END_GAME:
-                print("🏁 Game Over message received")
+            # FIX 4: Listen for MSG_LEADERBOARD, not MSG_END_GAME
+            elif msg_type == MSG_LEADERBOARD:
+                print("🏁 Game Over message received (Leaderboard)")
+                # You could optionally parse and print the leaderboard here
+                # try:
+                #     leaderboard_data = json.loads(payload.decode())
+                #     print("--- FINAL LEADERBOARD ---")
+                #     for entry in leaderboard_data.get("results", []):
+                #         print(f"Rank {entry['rank']}: Player {entry['player_id']} (Score: {entry['score']})")
+                # except Exception as e:
+                #     print(f"Could not parse leaderboard: {e}")
+
                 self.transition(ClientState.GAME_OVER)
                 return
 
@@ -213,23 +241,27 @@ class ClientFSM:
                 continue
 
         now = time.time()
+        # This is the test-stub logic for sending an acquire event
         if int(now) % 10 == 0 and not self.pending_acquire:
             x, y = 5, 7
-            ip, port = self.sock.getsockname()
+
+            # This is already correct: {"x": ..., "y": ...}
             payload_dictionary = {"x": x, "y": y}
             payload = json.dumps(payload_dictionary).encode()
 
             self.send_packet(MSG_ACQUIRE_EVENT, payload=payload)
-            print(f"📦 Sent ACQUIRE event ({x},{y}) from {ip}:{port}")
+            print(f"📦 Sent ACQUIRE event ({x},{y})")
             self.pending_acquire = payload
             self.last_acquire_time = now
 
         elif self.pending_acquire and now - self.last_acquire_time >= ACQUIRE_RESEND:
+            # Resend the pending acquire event
             self.send_packet(MSG_ACQUIRE_EVENT, payload=self.pending_acquire)
             self.last_acquire_time = now
 
     def handle_game_over(self):
         print("🏁 Game Over! Finalizing session...")
+        # Server doesn't listen for this, but sending it is harmless.
         self.send_packet(MSG_END_GAME, payload=b"ACK")
         print("✔️ Sent game over acknowledgment to server.")
         self.sock.close()
@@ -246,14 +278,24 @@ class ClientFSM:
             print("⚠️ No base grid, ignoring delta snapshot.")
             return
 
-        for (y, x, new_val) in delta["delta"]:
+        # FIX 5: The server sends "changes", but your server's
+        # internal logic said "delta". I'll match the server's
+        # actual sent payload, which is "changes".
+        # (If you change the server to send "delta", change this back)
+        changes_list = delta.get("changes")
+        if changes_list is None:
+            print("⚠️ Delta snapshot missing 'changes' key.")
+            return
+
+        for (y, x, new_val) in changes_list:
             self.grid[y][x] = new_val
 
         self.last_snapshot_id = delta["snapshot_id"]
-        print(f"[DELTA] Applied {len(delta['delta'])} changes (snapshot #{self.last_snapshot_id})")
+        print(f"[DELTA] Applied {len(changes_list)} changes (snapshot #{self.last_snapshot_id})")
 
 
 def main():
+    # This port is now correct and matches the server
     server_address = ("127.0.0.1", 8888)
     clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     clientSocket.settimeout(TICK)
@@ -261,7 +303,7 @@ def main():
     headers = ClientHeaders()
     fsm = ClientFSM(clientSocket, headers, server_address)
 
-    print(f"Client started with ID: {headers.id}")
+    print(f"Client started.")
     print(f"Initial state: {fsm.state.name}")
 
     fsm.run()
