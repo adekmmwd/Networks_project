@@ -181,6 +181,7 @@ class GameServer:
                 self.current_snapshot["grid"][cell_y][cell_x] = player.id
                 player.score += 1
                 print(f"Player {player.id} acquired cell ({cell_x}, {cell_y})")
+                print(f"POS_SERVER id={player.id} x={cell_x} y={cell_y} ts={time.time()}")
         #self.current_snapshot["timestamp"] = time.time()
 
     def handle_snapshot_ack(self, addr, header):

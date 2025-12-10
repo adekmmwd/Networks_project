@@ -226,13 +226,13 @@ class ClientFSM:
             
             elif msg_type == MSG_ACQUIRE_ACK:
                 ack=json.loads(payload.decode())
+                
                 if self.last_acquire_request and ack["x"]==self.last_acquire_request["x"] and ack["y"]==self.last_acquire_request["y"]:
                     print(f"✓ Received ACK for ({ack['x']},{ack['y']}) recv_time={time.time()}")
-                    self.pending_acquire = None 
                     self.last_acquire_request = {}
+                self.pending_acquire = None 
 
 
-            # ---- Handle Game Over / Leaderboard ----
             elif msg_type == MSG_LEADERBOARD:
                 print("🏁 Game Over message received (Leaderboard)")
 
@@ -269,8 +269,9 @@ class ClientFSM:
                 self.send_packet(MSG_ACQUIRE_EVENT, payload=payload)
                 self.pending_acquire = payload
                 self.last_acquire_time = now
-                self.last_acquire_request={"x":x,"y":y}
+                self.last_acquire_request={"x":x,"y":y,"time":time.time()}
                 print(f"📦 Sent ACQUIRE event ({x},{y}) AT {self.last_acquire_time}")
+        
         elif self.pending_acquire and now-self.last_acquire_time> ACQUIRE_RESEND:
             payload_dictionary = {"x": self.last_acquire_request["x"], "y": self.last_acquire_request["y"]}
             payload = json.dumps(payload_dictionary).encode()
