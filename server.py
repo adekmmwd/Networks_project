@@ -4,6 +4,7 @@ import dataclasses
 import enum
 import time
 import json
+import zlib
 import numpy as np
 import psutil
 from header import *
@@ -180,7 +181,7 @@ class GameServer:
 
         player = self.players.get(addr)
         if player:
-            # Only update if this is a newer (or same) ack
+            # Only update if this is a newer or same ack
             if snapshot_id >= player.last_snapshot_id:
                 player.last_snapshot_id = snapshot_id
                 player.last_update_time = time.time()
@@ -206,7 +207,7 @@ class GameServer:
             self.state = ServerState.WAITING_FOR_INIT
 
     def run_state_waiting_for_init(self):
-        print("Sending initial snapshot...")
+        print("Sending initial snapshot")
 
         self.current_snapshot = {
             "grid": ([[0 for _ in range(20)] for _ in range(20)]),
@@ -216,6 +217,7 @@ class GameServer:
 
         snapshot_payload = json.dumps(self.current_snapshot).encode()
         self.seq_num += 1
+        snapshot_payload=zlib.compress(snapshot_payload)
         snapshot_packet = make_packet(MSG_SNAPSHOT_FULL, payload=snapshot_payload, snapshot_id=self.snapshot_id, seq_num=self.seq_num)
 
         for player in self.players.values():
@@ -229,7 +231,7 @@ class GameServer:
         
        
         self.state = ServerState.GAME_LOOP
-        print("Entering GAME_LOOP...")
+        print("Entering GAME_LOOP")
 
     def update_game_loop(self):
         
@@ -243,7 +245,7 @@ class GameServer:
 
         grid_flat = np.array(self.current_snapshot["grid"]).flatten()
         if np.all(grid_flat != 0):
-            print("All cells claimed — ending game.")
+            print("All cells claimed ending game.")
             self.game_running = False
             self.state = ServerState.GAME_OVER
 
@@ -280,6 +282,7 @@ class GameServer:
 
     
         full_payload = json.dumps(self.current_snapshot).encode()
+        full_payload = zlib.compress(full_payload)
         full_packet = make_packet(MSG_SNAPSHOT_FULL, payload=full_payload,
                                   snapshot_id=server_snapshot_id, seq_num=self.seq_num)
         
@@ -372,7 +375,7 @@ class GameServer:
         self.reset_server_state()
 
     def reset_server_state(self):
-        print("Game session ended. Server ready for next round.")
+        print("Game session ended. Ready for next round.")
         
         self.players.clear()
         self.ready_count = 0

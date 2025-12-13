@@ -3,6 +3,7 @@ import json
 import uuid
 import time
 import random
+import zlib
 from collections import deque
 from enum import Enum, auto
 from header import *
@@ -135,7 +136,6 @@ class ClientFSM:
 
         if self.recent_transition or now - self.last_send_time >= READY_RESEND:
             self.recent_transition = 0
-            # FIX 3: Send an empty payload. Server ignores it.
             self.send_packet(MSG_READY_REQ, payload=b"")
             print("→ Sent READY_REQ")
             self.last_send_time = now
@@ -153,6 +153,8 @@ class ClientFSM:
             snap_id = header["snapshot_id"]
             self.last_snapshot_id = snap_id
             print(f"Received full snapshot #{snap_id}")
+
+            payload=zlib.decompress(payload)
             self.apply_full_snapshot(json.loads(payload.decode()))
    
             self.send_packet(MSG_SNAPSHOT_ACK, snapshot_id=snap_id)
@@ -168,9 +170,8 @@ class ClientFSM:
 
 
     def handle_game_loop(self):
+        #buffer to handle many messages
         buffer = deque()
-
-        # Step 1: drain all available packets into buffer
         while True:
             try:
                 header, payload,packet_len = self.recv_packet(block=False)
@@ -180,8 +181,6 @@ class ClientFSM:
                 break
             except Exception:
                 break
-
-        # Step 2: process all received packets
         while buffer:
             header, payload,packet_len = buffer.popleft()
             now = time.time()
@@ -190,14 +189,15 @@ class ClientFSM:
 
             if msg_type in (MSG_SNAPSHOT_FULL, MSG_SNAPSHOT_DELTA):
                 if snapshot_id <= self.last_snapshot_id:
-                    print(f"⚠️ Ignored outdated snapshot #{snapshot_id} (last={self.last_snapshot_id})")
+                    print(f"Ignored outdated snapshot #{snapshot_id} (last={self.last_snapshot_id})")
                     continue
 
             
             if msg_type == MSG_SNAPSHOT_FULL:
+                payload=zlib.decompress(payload)
                 state = json.loads(payload.decode())
                 self.apply_full_snapshot(state)
-                print(f"✓ Applied full snapshot #{snapshot_id}")
+                print(f"Applied full snapshot #{snapshot_id}")
 
                 # Logging for the metrics collection script
                 print(f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']} bytes={packet_len}")
@@ -210,11 +210,9 @@ class ClientFSM:
             elif msg_type == MSG_SNAPSHOT_DELTA:
                 delta = json.loads(payload.decode())
                 self.apply_delta_snapshot(delta)
-                print(f"✓ Applied delta snapshot #{snapshot_id}")
+                print(f"Applied delta snapshot #{snapshot_id}")
 
-                # Logging for the metrics collection script
                 print(f"SNAPSHOT recv_time={time.time()} server_ts={header['timestamp']} snapshot_id={snapshot_id} seq={header['seq_num']} bytes={packet_len}" )
-             
                 self.last_snapshot_id = snapshot_id
                 self.last_ack_time = now
                 #self.pending_acquire = None
@@ -224,14 +222,13 @@ class ClientFSM:
                 ack=json.loads(payload.decode())
                 
                 if self.last_acquire_request and ack["x"]==self.last_acquire_request["x"] and ack["y"]==self.last_acquire_request["y"]:
-                    print(f"✓ Received ACK for ({ack['x']},{ack['y']}) recv_time={time.time()}")
+                    print(f"Received ACK for ({ack['x']},{ack['y']}) recv_time={time.time()}")
                     self.last_acquire_request = {}
                     self.pending_acquire = None 
 
 
             elif msg_type == MSG_LEADERBOARD:
                 print("Game Over message received (Leaderboard)")
-
                 try:
                     lb = json.loads(payload.decode())
                     results = lb.get("results", [])
@@ -253,7 +250,6 @@ class ClientFSM:
 
 
         now = time.time()
-
         
         if not self.pending_acquire:
             if random.random() < (TICK / random.uniform(3, 8)):
@@ -282,7 +278,7 @@ class ClientFSM:
         print("Game Over! Finalizing session...")
         
         self.send_packet(MSG_END_GAME, payload=b"ACK")
-        print("✔️ Sent game over acknowledgment to server.")
+        print("Sent game over acknowledgment to server.")
         time.sleep(1)
         self.sock.close()
         self.running = False

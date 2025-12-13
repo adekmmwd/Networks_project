@@ -7,13 +7,11 @@ import argparse
 import pygame
 import sys
 
-try:
+try:   
     from client import ClientFSM, ClientState, ClientHeaders, MSG_ACQUIRE_EVENT
-    USE_YOUR_CLIENT = True
-    print("Using your client.py module")
+    client_available = True
 except ImportError:
-    print("Could not import client.py, using fallback")
-    USE_YOUR_CLIENT = False
+    client_available = False
 
 
 class GridClashGUI:
@@ -32,36 +30,33 @@ class GridClashGUI:
         # Leaderboard from server
         self.leaderboard = None
         
-        # Start your FSM client in a thread
-        if USE_YOUR_CLIENT:
-            print("Starting your FSM client...")
+
+        if client_available:
             self.fsm_thread = threading.Thread(target=self.run_fsm_client, daemon=True)
             self.fsm_thread.start()
         else:
-            print("Fallback mode - no FSM available")
+            print("No client available")
         
     def run_fsm_client(self):
         
         try:
-            # Create socket and client as in your client.py
+            # Create socket and client 
             server_address = (self.server_host, self.port)
             clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             clientSocket.settimeout(0.05)
             
             headers = ClientHeaders()
             self.fsm = ClientFSM(clientSocket, headers, server_address)
-            
-            print(f"FSM client started for server {self.server_host}:{self.port}")
             self.fsm.run()
             
         except Exception as e:
-            print(f"Error in FSM client: {e}")
+            print(f"Error in client: {e}")
             import traceback
             traceback.print_exc()
     
     def get_game_state(self):
        
-        if not USE_YOUR_CLIENT or not hasattr(self, 'fsm'):
+        if not client_available or not hasattr(self, 'fsm'):
             return self.grid, None, 0, ClientState.WAIT_FOR_JOIN, None
         
         try:
@@ -79,10 +74,8 @@ class GridClashGUI:
                         if cell == player_id:
                             score += 1
             
-            # Get current state
+    
             state = self.fsm.state
-            
-            # Try to get leaderboard from FSM
             leaderboard_data = None
             if hasattr(self.fsm, 'leaderboard'):
                 leaderboard_data = self.fsm.leaderboard
@@ -90,8 +83,7 @@ class GridClashGUI:
                 leaderboard_data = self.fsm._leaderboard
             elif hasattr(self.fsm, 'scores'):
                 leaderboard_data = self.fsm.scores
-            
-            # If no leaderboard but game is over, create one from grid
+
             if state == ClientState.GAME_OVER and leaderboard_data is None:
                 player_scores = {}
                 for y in range(len(grid)):
@@ -101,7 +93,6 @@ class GridClashGUI:
                             player_scores[str(player)] = player_scores.get(str(player), 0) + 1
                 if player_scores:
                     leaderboard_data = player_scores
-                    print(f"Created leaderboard from grid: {leaderboard_data}")
             
             return grid, player_id, score, state, leaderboard_data
             
@@ -110,8 +101,8 @@ class GridClashGUI:
             return self.grid, self.player_id, self.score, ClientState.WAIT_FOR_JOIN, self.leaderboard
     
     def send_acquire(self, x, y):
-        if not USE_YOUR_CLIENT or not hasattr(self, 'fsm'):
-            print(f"Cannot acquire cell: FSM not available")
+        if not client_available or not hasattr(self, 'fsm'):
+            print(f"Cannot acquire cell: client not available")
             return False
         
         try:
@@ -122,7 +113,6 @@ class GridClashGUI:
             payload = json.dumps(payload_dictionary).encode()
             
             self.fsm.send_packet(MSG_ACQUIRE_EVENT, payload=payload)
-            print(f"GUI: Requesting cell ({x}, {y})")
             return True
             
         except Exception as e:
@@ -131,14 +121,13 @@ class GridClashGUI:
     
     def send_ready(self):
         
-        if not USE_YOUR_CLIENT or not hasattr(self, 'fsm'):
-            print("Cannot send ready: FSM not available")
+        if not client_available or not hasattr(self, 'fsm'):
+            print("Cannot send ready: client not available")
             return False
         
         try:
             if self.fsm.state == ClientState.WAIT_FOR_READY:
                 self.fsm.transition(ClientState.WAIT_FOR_STARTGAME)
-                print("GUI: Sent ready signal")
                 return True
             return False
         except:
@@ -154,7 +143,6 @@ def run_pygame_gui(gui_client):
     screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.RESIZABLE)
     pygame.display.set_caption("Grid Clash")
     
-    # Colors
     COLOR_MAP = {
         0: (60, 60, 60),
         1: (255, 80, 80),
@@ -169,8 +157,7 @@ def run_pygame_gui(gui_client):
     
     def get_color(player_id):
         return COLOR_MAP.get(player_id, (180, 180, 180))
-    
-    # Fonts
+
     font = pygame.font.SysFont(None, 32)
     small_font = pygame.font.SysFont(None, 24)
     large_font = pygame.font.SysFont(None, 36)
@@ -244,18 +231,15 @@ def run_pygame_gui(gui_client):
         
         status_surface = large_font.render(status_text, True, (255, 255, 255))
         screen.blit(status_surface, (current_width // 2 - status_surface.get_width() // 2, 20))
-        
-        # Draw grid
+
         GRID_AREA = min(current_width - 100, current_height - 200)
         CELL_SIZE = max(20, GRID_AREA // 20)
         GRID_X = (current_width - CELL_SIZE * 20) // 2
         GRID_Y = (current_height - CELL_SIZE * 20) // 2 + 50
         
-        # Draw grid background
         pygame.draw.rect(screen, (35, 35, 35), 
                         (GRID_X, GRID_Y, CELL_SIZE * 20, CELL_SIZE * 20))
         
-        # Draw cells
         for y in range(20):
             for x in range(20):
                 cell_value = grid[y][x] if y < len(grid) and x < len(grid[y]) else 0
@@ -279,8 +263,7 @@ def run_pygame_gui(gui_client):
                     cell_text = small_font.render(str(cell_value), True, (255, 255, 255))
                     text_rect = cell_text.get_rect(center=rect.center)
                     screen.blit(cell_text, text_rect)
-        
-        # Draw info panel
+
         panel_width = min(300, current_width // 3)
         panel_x = current_width - panel_width - 20
         panel_y = 80
@@ -312,12 +295,10 @@ def run_pygame_gui(gui_client):
         
        
         if state == ClientState.GAME_OVER:
-            # Dark overlay
+        
             overlay = pygame.Surface((current_width, current_height), pygame.SRCALPHA)
             overlay.fill((0, 0, 0, 200))
             screen.blit(overlay, (0, 0))
-            
-            # Leaderboard box
             lb_width = 600
             lb_height = 500
             lb_x = (current_width - lb_width) // 2
@@ -326,7 +307,6 @@ def run_pygame_gui(gui_client):
             pygame.draw.rect(screen, (30, 30, 40), (lb_x, lb_y, lb_width, lb_height))
             pygame.draw.rect(screen, (100, 100, 150), (lb_x, lb_y, lb_width, lb_height), 4)
             
-            # Title
             title = title_font.render("GAME OVER", True, (255, 100, 100))
             screen.blit(title, (current_width // 2 - title.get_width() // 2, lb_y + 30))
             
@@ -346,16 +326,12 @@ def run_pygame_gui(gui_client):
                     screen.blit(header_text, (x_pos, header_y))
                     x_pos += column_widths[i]
                 
-                # Draw horizontal line
                 pygame.draw.line(screen, (100, 100, 150), 
                                (lb_x + 40, header_y + 30), 
                                (lb_x + lb_width - 40, header_y + 30), 2)
                 
-                # Display leaderboard entries
                 entry_y = header_y + 50
                 max_display = 8
-                
-                # Sort leaderboard by score (descending)
                 sorted_leaderboard = sorted(leaderboard_data.items(), 
                                           key=lambda x: x[1], 
                                           reverse=True)[:max_display]
@@ -372,16 +348,13 @@ def run_pygame_gui(gui_client):
                     else:
                         player_cells = player_score
                     
-                    # Highlight current player
+     
                     text_color = (255, 255, 255)
                     if player_id and str(player_id) == str(player_id_entry):
                         text_color = (255, 255, 100)
-                    
-                    # Draw rank
+        
                     rank_text = font.render(f"{rank}.", True, text_color)
                     screen.blit(rank_text, (lb_x + 60, entry_y))
-                    
-                    # Draw player ID with color
                     if player_id_entry.isdigit():
                         player_color = get_color(int(player_id_entry))
                     else:
@@ -391,17 +364,16 @@ def run_pygame_gui(gui_client):
                     player_text = font.render(f"Player {player_id_entry}", True, text_color)
                     screen.blit(player_text, (lb_x + 200, entry_y))
                     
-                    # Draw score
+     
                     score_text = font.render(str(player_score), True, text_color)
                     screen.blit(score_text, (lb_x + 330, entry_y))
                     
-                    # Draw cells
+              
                     cells_text = font.render(str(player_cells), True, text_color)
                     screen.blit(cells_text, (lb_x + 450, entry_y))
                     
                     entry_y += 40
                 
-                # Show current player's position
                 if player_id and all(str(player_id) != str(pid) for pid, _ in sorted_leaderboard[:max_display]):
                     all_sorted = sorted(leaderboard_data.items(), 
                                       key=lambda x: x[1], 
@@ -424,35 +396,29 @@ def run_pygame_gui(gui_client):
                         your_stats = font.render(f"Score: {your_score}, Cells: {your_cells}", True, (200, 200, 200))
                         screen.blit(your_stats, (current_width // 2 - your_stats.get_width() // 2, your_rank_y + 30))
             else:
-                # No leaderboard data available
                 message = large_font.render("Leaderboard Data Unavailable", True, (255, 150, 150))
                 screen.blit(message, (current_width // 2 - message.get_width() // 2, lb_y + 180))
             
-            # Exit instruction
+          
             instruction = font.render("Press ESC to exit", True, (200, 200, 200))
             screen.blit(instruction, (current_width // 2 - instruction.get_width() // 2, lb_y + lb_height - 60))
         
-        # Update display
+        
         pygame.display.flip()
         clock.tick(60)
     
-    # Cleanup
+
     pygame.quit()
-    print("GUI closed")
 
 def run_your_server():
     try:
         from server import GameServer
-        print("=" * 70)
-        print("STARTING YOUR SERVER (server.py)")
-        print("=" * 70)
         server = GameServer()
         server.run()
     except ImportError:
         print("Error: Could not import server.py")
-        print("Make sure server.py is in the same directory")
     except KeyboardInterrupt:
-        print("\nServer stopped by user")
+        print("\nServer stopped")
 
 
 def main():
@@ -467,20 +433,11 @@ def main():
     if args.mode == "server":
         run_your_server()
     elif args.mode == "client":
-        print("=" * 70)
-        print("GRID CLASH GUI CLIENT")
-        print("=" * 70)
-        print(f"Connecting to: {args.host}:8888")
-        print("=" * 70)
-        
-        # Create GUI client wrapper
         gui_client = GridClashGUI(args.host)
-        
-        # Run GUI
         try:
             run_pygame_gui(gui_client)
         except KeyboardInterrupt:
-            print("\nClient stopped by user")
+            print("\nClient stopped")
         except Exception as e:
             print(f"Error: {e}")
             import traceback
