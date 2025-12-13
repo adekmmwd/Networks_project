@@ -10,16 +10,16 @@ if [ "$1" == "all" ]; then
     
 
     echo "Running baseline..."
-    sudo bash "$0" "baseline"
+     bash "$0" "baseline"
     
     echo "Running loss2..."
-    sudo bash "$0" "loss2"
-    
+     bash "$0" "loss2"
+
     echo "Running loss5..."
-    sudo bash "$0" "loss5"
+     bash "$0" "loss5"
     
     echo "Running delay100..."
-    sudo bash "$0" "delay100"
+     bash "$0" "delay100"
 
     python3 relations_plot.py
 
@@ -42,7 +42,7 @@ OUT_DIR="results/${TEST_MODE}/run1"
 
 echo "=== Starting Test: ${TEST_MODE} ==="
 echo "Cleaning old results in ${OUT_DIR}"
-rm -rf "${OUT_DIR}"
+sudo rm -rf "${OUT_DIR}"
 mkdir -p "${OUT_DIR}"
 
 echo "Setting up network conditions on ${INTERFACE}"
