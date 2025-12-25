@@ -1,8 +1,0 @@
-Test: loss2
-Latency: Mean=0.61, Median=0.61, 95th=1.09
-Jitter: Mean=0.31, Median=0.25, 95th=0.82
-Error: Mean=0.0124, Median=0.0000, 95th=0.0000
-Bandwidth (Avg Total): 11.88 kbps
-CPU: 4.21%
-Update Rate: 23.75 ups
-Loss Rate: 2.19 %

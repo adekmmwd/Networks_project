@@ -1,8 +1,0 @@
-Test: baseline
-Latency: Mean=0.61, Median=0.61, 95th=1.08
-Jitter: Mean=0.35, Median=0.29, 95th=0.83
-Error: Mean=0.0130, Median=0.0000, 95th=0.0000
-Bandwidth (Avg Total): 11.92 kbps
-CPU: 2.45%
-Update Rate: 24.30 ups
-Loss Rate: 0.00 %
